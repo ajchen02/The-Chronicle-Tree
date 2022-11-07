@@ -76,23 +76,23 @@ addLayer("r", {
     extraExpDisplay(id, cost) {
         let skill = id2skill[id]
         let effect = buyableEffect("r", id)
-        return `${skill_dispn[skill]} bonus skill level +${format(effect[0], 0)},
-        multiply ${skill_dispn[skill]} experience by x${format(effect[1])}
+        return `${skill_dispn[skill]} bonus level +${format(effect[0], 0)},
+        Multiply ${skill_dispn[skill]} experience by x${format(effect[1])}
 
         Next level cost: ${format(cost)} Reborn points`
     },
 
     upgrades: {
         11: {
-            title: "Automatic - Peano the village",
-            description: "In Peano village, gain 0.5 spended time every second. (Infected by Indolent and global speed)",
+            title: "Automatic - Peano village",
+            description: "In Peano village<, gain 0.5 spended time every second. (Infected by Indolent and global speed)",
             unlocked: () => hasAchievement("m", 22),
             cost: d(100),
         },
 
         12: {
             title: "Sequence Breaking I",
-            description: "<i>Why I MUST buying a weapon?</i><br>When havn't equip any weapon, You use your Fist (Number 1, ATK 3). And now you unlock The plain of squares without Upgrade-Set sail from Peano village.",
+            description: "<i>Why do I MUST buying a weapon?</i><br>When not equip any weapon, You use your Fist (Number 1, ATK 3). And now you unlock The plain of squares without Upgrade-Set sail from Peano village.",
             unlocked: () => hasUpgrade("r", 11),
             cost: d(300),
         },

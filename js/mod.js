@@ -2,7 +2,7 @@ let modInfo = {
 	name: "The Chronicle Tree",
 	id: "chronicle",
 	author: "catfish",
-	pointsName: "空余时间",
+	pointsName: "Free times",
 	modFiles: [
 		"utils/funcutils.js",
 		"tree.js", 
@@ -37,7 +37,8 @@ let VERSION = {
 	name: "第一点五步",
 }
 
-let changelog = `<h1>更新日志</h1><br>
+let changelog = `<h1>Change log:</h1><br>
+	<h2>FOR GOD SAKE I WILL NOT TRANSLATE THIS<h2><br>
 	<h3>v0.02 第一点五步</h3><br>
 		- 增加了小半个地区层，修改了明显不合理的部分数值。<br>
 		- 现在初期可能反而过于缓慢。<br>
@@ -51,12 +52,12 @@ let changelog = `<h1>更新日志</h1><br>
 		- 不存在平衡。<br>
 		`
 
-let intro = `<h1>游戏介绍:</h1><br>
-		本树的灵感来源包括: Increlution, Your Chronicle, NGU Idle等。<br>
-		在增量游戏和放置游戏的基础上，试图讲述一个数值膨胀的RPG故事。<br>
+let intro = `<h1>Intro:</h1><br>
+		Sources of inspiration of this tree including Increlution, Your Chronicle, NGU Idle and more.<br>
+		Based on Incremental / Idle game, Try to tell a story of number inflating RPG.<br>
 	`
 
-let winText = `你已玩通了目前所有游戏内容！感谢您的游玩，敬请期待更新~`
+let winText = `You have beated all the current context! Thanks for your playing, Stay turned for updates~`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -92,19 +93,19 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	function() {
-		return `目前Endgame: 通过第二个副本`
+		return `Current Endgame: Pass the second instance`
 	},
 
 	function() {
 		if (player.r.is_dead) {
-			return `<p>${player.r.last_death_cause}</p><p>你的身体已经死亡！在重生之前，无法进行任何操作。</p>`
+			return `<p>${player.r.last_death_cause}</p><p>Your body has already DEAD! You can't do anything until you reborn.</p>`
 		}
 
 	},
 
 	function() {
 		if (hasAchievement("m", 14)) {
-			return `你当前的数字为 ${format(tmp.r.number)}`
+			return `Your current number is ${format(tmp.r.number)}`
 		}
 	}
 ]

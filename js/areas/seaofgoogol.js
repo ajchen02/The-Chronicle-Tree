@@ -1,5 +1,5 @@
 addLayer("g", {
-    name: "古戈尔之海", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "Sea of Googol", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "~", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -29,7 +29,7 @@ addLayer("g", {
     },
     color: "#3498db",
     requires: d(1), // Can be a function that takes requirement increases into account
-    resource: "投入时间", // Name of prestige currency
+    resource: "Spended time", // Name of prestige currency
     baseResource: "空余时间", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -43,7 +43,7 @@ addLayer("g", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return d(1)
     },
-    tooltip: () => `投入时间 <br>
+    tooltip: () => `Spended <br>
         &nbsp; ${formatWhole(player.g.points)}`,
     tooltipLocked: () => "古戈尔之海",
     // upgrades: {
@@ -61,16 +61,16 @@ addLayer("g", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress: () => player.g.depth_cur.gt(0) ? player.g.air_cur_progress : d(1),
-            display() { return player.g.depth_cur.gt(0) ? `剩余氧气: ${format(player.g.air_cur)}/${format(tmp.g.maxAir)}` : ""},
+            display() { return player.g.depth_cur.gt(0) ? `Oxygen left: ${format(player.g.air_cur)}/${format(tmp.g.maxAir)}` : ""},
             unlocked: true
         }
     },
 
     clickables: {
         11: {
-            "title": "向上游",
+            "title": "Swim up",
             display() {
-                return `你距离水面还有 ${format(player.g.depth_cur)} 米`
+                return `You have ${format(player.g.depth_cur)} meter left to surface`
             },
             style() {
                 return {"background-color": player.g.diving_up ? "#3498db" : "#ffffff"}
@@ -100,9 +100,9 @@ addLayer("g", {
         },
 
         13: { 
-            "title": "钓鱼",
+            "title": "Fishing",
             display() {
-                return "（别忘了先装备鱼竿）"
+                return "(Do not forget to equip fishing rod)"
             },
             style: {
                 "background-color": "#ffffff"
@@ -140,8 +140,8 @@ addLayer("g", {
 
     upgrades: {
         11: {
-            title: "熟悉水性",
-            description: "本地投入时间转化效率x2.5",
+            title: "Be familiar with water",
+            description: "Local spended time conversion efficiency x 2.5",
             effect: () => d(2.5),
             cost: d(10),
             currencyDisplayName: () => res_name["fish"],
@@ -150,9 +150,9 @@ addLayer("g", {
             unlocked: () => player.i.bestfish.gt(0)
         },
         12: {
-            title: "钓鱼技术",
-            description: `鱼 x 2.5<br>
-                对，就是鱼x2.5`,
+            title: "Fishing Technology",
+            description: `Fish x 2.5<br>
+                Yes, It is Fishx2.5`,
             effect: () => d(2.5),
             cost: d(50),
             currencyDisplayName: () => res_name["fish"],
@@ -161,9 +161,9 @@ addLayer("g", {
             unlocked: () => player.i.bestfish.gt(0)
         },
         13: {
-            title: "钓鱼技术",
-            description: `鱼 再x 2.5<br>
-                对，就是 鱼 再x2.5`,
+            title: "Fishing Technology",
+            description: `Fish x 2.5 Again<br>
+                Yes, we x2.5 it again`,//对，就是 鱼 再x2.5
             effect: () => d(2.5),
             cost: d(1000),
             currencyDisplayName: () => res_name["fish"],
@@ -175,23 +175,23 @@ addLayer("g", {
 
     infoboxes: {
         lore: {
-            title: "故事",
+            title: "Story",
             body() {
-                let s = "<p>你被喉咙中灌入的海水呛醒。你想要呼吸，但幸运的是生存的本能阻止了你。你正身处水面之下，上方不远处有着微弱的光。海水仿佛要将你的胸腔压碎，没有时间犹豫了，你必须离开。</p>"
+                let s = "<p>You are awoken by the salt water poured down your throat. You wanna breath, but luckily The instinct to survive stops you. You are lower than the surface of the sea, with faint light glows above. The sea seems to be crushing your chest, leaving you no time to hesitate. You must leave.</p>"
 
                 if (hasAchievement("m", 12)) {
-                    s += "<p style='margin-top: 5px'>幸好你离水面不算远。你开始思考接下来该去什么地方。</p>"
+                    s += "<p style='margin-top: 5px'>Luckily you weren't too far away from surface. You begin wondering where to go next.</p>"
                 }
 
                 if (tmp.r.number.gte(10)) {
-                    s += "<p style='margin-top: 5px'> 在数字成长之后，原本重生在水下的你，尺寸已经高出了水面。你已不再需要多游这一段路。 </p>"
+                    s += "<p style='margin-top: 5px'> After your number grows, once reborn under the sea has already risen above the water. You needn't to swim up from now on. </p>"
                 }
                 return s
             }
         }
     },
     tabFormat: [["display-text", function() {
-            return `在古戈尔之海区域，你目前有<b> ${format(player.g.points)} </b>投入时间`
+            return `In Sea of Googol, You have <b> ${format(player.g.points)} </b> Spended time`
         }, {"font-size": "20px"}],
         "blank",
         "prestige-button",
@@ -207,7 +207,7 @@ addLayer("g", {
         ["display-text", function() {
             let disp = ""
             if (player.g.last_fish.gt(0)) {
-                disp += `<p>你上一次钓鱼获得了 ${format(player.g.last_fish)} ${res_name["fish"]}, ${format(player.g.last_fish_exp)} 经验</p>`
+                disp += `<p>Last fishing obtained ${format(player.g.last_fish)} ${res_name["fish"]}, ${format(player.g.last_fish_exp)} Experence</p>`
             }
             return disp
         }],
@@ -217,7 +217,7 @@ addLayer("g", {
     row: 0, // Row the layer is in on the tree (0 is the first row)
     displayRow: 0,
     hotkeys: [
-        {key: "g", description: "g: 将空余时间投入古戈尔之海区域", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "g", description: "g: Put all the free time to Sea of Googol", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     doReset(resettingLayer) {
         // console.log("g:receiving " + resettingLayer)
@@ -289,7 +289,7 @@ addLayer("g", {
             if (data.air_cur.lte(0)) {
                 // You died
                 data.diving_up = false
-                layers["r"].youDied("你溺死了。")
+                layers["r"].youDied("You drowned.")
                 return
             }
 
@@ -308,7 +308,7 @@ addLayer("g", {
             if (data.air_cur.lte(0)) {
                 // You died
                 data.diving_up = false
-                layers["r"].youDied("你溺死了。")
+                layers["r"].youDied("You drowned.")
                 return
             }
 

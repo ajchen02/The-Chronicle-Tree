@@ -3,7 +3,7 @@
 var res_name = {
     "gold": "金子",
     "food": "食物",
-    "fish": "鱼",
+    "fish": "Fish",
     "wood": "木材",
     "fiber": "纤维",
     "mineral": "矿物",
