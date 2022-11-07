@@ -161,7 +161,7 @@ addLayer("m", {
     infoboxes: {
         desc: {
             title: "About Memory",
-            body() { return "随着旅途进行，失去的记忆或许会被逐渐取回——又或许可以获得新的记忆。记忆将会永久保存，即使死亡重生也不例外。" }
+            body() { return "As the journey continue, lost memories may gradually retrieved -- or new ones may gained. Memories will be preserved forever, even after the death and reborn." }
         }
     },
 
