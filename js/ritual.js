@@ -18,8 +18,8 @@ let sigil_template = (symbol) => {
 }
 
 addLayer("r", {
-    name: "重生", // This is optional, only used in a few places, If absent it just uses the layer id.
-    disp_symbol: "重生",
+    name: "reborn", // This is optional, only used in a few places, If absent it just uses the layer id.
+    disp_symbol: "Reborn",
     symbol: "R", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -34,8 +34,8 @@ addLayer("r", {
     color: "#3498db",
     subcolor: "#74b9ff",
     requires: d(1), // Can be a function that takes requirement increases into account
-    resource: "重生点", // Name of prestige currency
-    baseResource: "重生分数", // Name of resource prestige is based on
+    resource: "Reborn point", // Name of prestige currency
+    baseResource: "Reborn score", // Name of resource prestige is based on
     baseAmount() {return player.r.score.add(1)}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.75, // Prestige currency exponent
@@ -76,30 +76,30 @@ addLayer("r", {
     extraExpDisplay(id, cost) {
         let skill = id2skill[id]
         let effect = buyableEffect("r", id)
-        return `提升${skill_dispn[skill]}技能额外等级 +${format(effect[0], 0)},
-        提升${skill_dispn[skill]}技能经验获取 x${format(effect[1])}
+        return `${skill_dispn[skill]} bonus skill level +${format(effect[0], 0)},
+        multiply ${skill_dispn[skill]} experience by x${format(effect[1])}
 
-        下一级价格: ${format(cost)} 重生点`
+        Next level cost: ${format(cost)} Reborn points`
     },
 
     upgrades: {
         11: {
-            title: "自动化 - 皮亚诺村",
-            description: "在皮亚诺村，每秒自动获得0.5投入时间（受怠惰与数字加成）",
+            title: "Automatic - Peano the village",
+            description: "In Peano village, gain 0.5 spended time every second. (Infected by Indolent and global speed)",
             unlocked: () => hasAchievement("m", 22),
             cost: d(100),
         },
 
         12: {
-            title: "破序 I",
-            description: "为什么一定要买武器？没有武器时，视作持有拳头(数字1, ATK 3)，且现在可以无需 升级-从皮亚诺村启程，即可直接到达幂次原野。",
+            title: "Sequence Breaking I",
+            description: "<i>Why I MUST buying a weapon?</i><br>When havn't equip any weapon, You use your Fist (Number 1, ATK 3). And now you unlock The plain of squares without Upgrade-Set sail from Peano village.",
             unlocked: () => hasUpgrade("r", 11),
             cost: d(300),
         },
         
         13: {
-            title: "简单化 I",
-            description: "在皮亚诺村的酒馆、农家自动投入一定时间。",
+            title: "Simplelize I",
+            description: "Automaticly spend time in Peano village's tavern and farmhouse.",
             unlocked: () => hasUpgrade("r", 12),
             cost: d(2000),
         },
@@ -107,7 +107,7 @@ addLayer("r", {
 
     buyables: {
         11: {
-            title: "游泳",
+            title: "Swimming",
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -123,7 +123,7 @@ addLayer("r", {
         },
         
         12: {
-            title: "交流", 
+            title: "Communicating", 
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -140,7 +140,7 @@ addLayer("r", {
         },
         
         13: {
-            title: "劳务",
+            title: "Laboring",
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -157,7 +157,7 @@ addLayer("r", {
         },
         
         21: {
-            title: "烹饪",
+            title: "Cooking",
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -174,7 +174,7 @@ addLayer("r", {
         },
 
         22: {
-            title: "贸易",
+            title: "Trading",
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -191,7 +191,7 @@ addLayer("r", {
         },
 
         23: {
-            title: "钓鱼",
+            title: "Fishing",
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -208,7 +208,7 @@ addLayer("r", {
         },
         
         31: {
-            title: "索敌",
+            title: "Hunting",
             cost(x) { return d(1).mul(x.add(1).pow(2)) },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
@@ -228,8 +228,8 @@ addLayer("r", {
 
     infoboxes: {
         lore: {
-            title: "故事",
-            body() { return "\t在死亡的一刻，双眼被黑暗笼罩，你的意识逐渐变得模糊。一切感知都离你远去，你觉得仿佛身处现实与梦境的边界。\n你很快意识到，自己并没有真的死亡。" }
+            title: "Story",
+            body() { return "\tYour eyes closed in dark at the very moment of your death, and your conscious slowly fade out. Every sense leaves you away, as if you are on the border between reality and dream. \nYou soon realized that you are not died in reality." }
         },
         systemintro: {
             title: "数字",
@@ -282,7 +282,7 @@ addLayer("r", {
     row: 10, // Row the layer is in on the tree (0 is the first row)
     displayRow: "side",
     hotkeys: [
-        {key: "r", description: "r: 重生", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "r", description: "r: Reborn", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     doReset(resettingLayer) {
         if (resettingLayer == "r") {
@@ -322,7 +322,7 @@ addLayer("r", {
     },
 
     tabFormat: {
-        "技能": {
+        "Skill": {
             content: ["main-display",
                 "prestige-button", "resource-display",
                 "blank",
@@ -333,7 +333,7 @@ addLayer("r", {
                 "buyables"]
         },
 
-        "数字": {
+        "Number": {
             content: [["display-text", function(){
                 let ret = `<p style='font-size: 20px; margin-bottom: 20px'>你目前的数字为 ${format(tmp.r.number)}</p>`
 

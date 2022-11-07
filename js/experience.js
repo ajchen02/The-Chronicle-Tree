@@ -9,13 +9,13 @@ var prices = {
 }
 
 var skill_dispn = {
-    "communication": "交流",
-    "swimming": "游泳",
-    "laboring": "劳务",
-    "cooking": "烹饪",
-    "trading": "交易",
-    "fishing": "钓鱼",
-    "hunting": "索敌",
+    "communication": "Communication",
+    "swimming": "Swimming",
+    "laboring": "Laboring",
+    "cooking": "Cooking",
+    "trading": "Trading",
+    "fishing": "Fishing",
+    "hunting": "Hunting",
     "atk": "攻击",
     "def": "防御",
     "speed": "速度",
@@ -93,7 +93,7 @@ addLayer("e", {
     color: "#27ae60",
     subcolor: "#55efc4",
     requires: d(1), // Can be a function that takes requirement increases into account
-    resource: "重生点", // Name of prestige currency
+    resource: "Reborn points", // Name of prestige currency
     baseResource: "重生分数", // Name of resource prestige is based on
     baseAmount() {return player.r.score}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
