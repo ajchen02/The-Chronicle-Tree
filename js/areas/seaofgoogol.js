@@ -207,7 +207,7 @@ addLayer("g", {
         ["display-text", function() {
             let disp = ""
             if (player.g.last_fish.gt(0)) {
-                disp += `<p>Last fishing obtained ${format(player.g.last_fish)} ${res_name["fish"]}, ${format(player.g.last_fish_exp)} Experence</p>`
+                disp += `<p>Last fishing obtained ${format(player.g.last_fish)} ${res_name["fish"]}, ${format(player.g.last_fish_exp)} Experience</p>`
             }
             return disp
         }],
