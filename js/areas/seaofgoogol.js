@@ -29,7 +29,7 @@ addLayer("g", {
     },
     color: "#3498db",
     requires: d(1), // Can be a function that takes requirement increases into account
-    resource: "Spended time", // Name of prestige currency
+    resource: "Spent time", // Name of prestige currency
     baseResource: "空余时间", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -43,7 +43,7 @@ addLayer("g", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return d(1)
     },
-    tooltip: () => `Spended <br>
+    tooltip: () => `Spent <br>
         &nbsp; ${formatWhole(player.g.points)}`,
     tooltipLocked: () => "古戈尔之海",
     // upgrades: {
@@ -141,7 +141,7 @@ addLayer("g", {
     upgrades: {
         11: {
             title: "Be familiar with water",
-            description: "Local spended time conversion efficiency x 2.5",
+            description: "Local spent time conversion efficiency x 2.5",
             effect: () => d(2.5),
             cost: d(10),
             currencyDisplayName: () => res_name["fish"],
@@ -191,7 +191,7 @@ addLayer("g", {
         }
     },
     tabFormat: [["display-text", function() {
-            return `In Sea of Googol, You have <b> ${format(player.g.points)} </b> Spended time`
+            return `In Sea of Googol, You have <b> ${format(player.g.points)} </b> Spent time`
         }, {"font-size": "20px"}],
         "blank",
         "prestige-button",
