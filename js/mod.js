@@ -37,7 +37,7 @@ let VERSION = {
 	name: "第一点五步",
 }
 
-let changelog = `<h1>Change log:</h1><br>
+let changelog = `<h1>Changelog:</h1><br>
 	<h2>FOR GOD SAKE I WILL NOT TRANSLATE THIS<h2><br>
 	<h3>v0.02 第一点五步</h3><br>
 		- 增加了小半个地区层，修改了明显不合理的部分数值。<br>
