@@ -23,8 +23,8 @@ var skill_dispn = {
 }
 
 addLayer("e", {
-    name: "经验", // This is optional, only used in a few places, If absent it just uses the layer id.
-    disp_symbol: "经验",
+    name: "experience", // This is optional, only used in a few places, If absent it just uses the layer id.
+    disp_symbol: "EXP",
     symbol: "E", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 3, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -94,7 +94,7 @@ addLayer("e", {
     subcolor: "#55efc4",
     requires: d(1), // Can be a function that takes requirement increases into account
     resource: "Reborn points", // Name of prestige currency
-    baseResource: "重生分数", // Name of resource prestige is based on
+    baseResource: "Reborn scores", // Name of resource prestige is based on
     baseAmount() {return player.r.score}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 1, // Prestige currency exponent
@@ -223,76 +223,76 @@ addLayer("e", {
     },
 
     tabFormat: {
-        "生存技能": {
+        "Survival": {
             content: [
-                ["display-text", "</b>你的躯体会随着冒险变强，但如果死去，此页面的内容将被重置！</b>", {"font-size": "20px"}],
+                ["display-text", "</b>Your body will become grow stronger as you proceed,<br>but if you died, all content in this page will reset!</b>", {"font-size": "20px"}],
                 "blank",
                 ["display-text", function() {
-                    return `你目前总生存技能等级 ${format(player.e.lvlpoints, 0)}, 提升技能经验值获取 x${format(tmp.e.lvlpEffect)}`
+                    return `Your total survival skill level is ${format(player.e.lvlpoints, 0)},<br> Increase skill exp gain by x${format(tmp.e.lvlpEffect)}`
                 }, {"font-size": "20px"}],
                 "blank",
                 ["display-text", function() {
-                    return `交流lv${format(player.e.communication.lvl, 0)}+${buyableEffect("r", 12)[0]}: 降低一切与人交流的时间花费，目前效果 x${format(tmp.e.communicationEffect)}`
+                    return `Communicating lv${format(player.e.communication.lvl, 0)}+${buyableEffect("r", 12)[0]}: Lower every communication time requirement. Current effect: x${format(tmp.e.communicationEffect)}`
                 }],
                 ["bar", "communicationBar"],
                 "blank",
                 ["display-text", function() {
-                    return `游泳lv${format(player.e.swimming.lvl, 0)}+${buyableEffect("r", 11)[0]}: 加快游泳速度，目前效果 x${format(tmp.e.swimmingEffect)}`
+                    return `Swimming lv${format(player.e.swimming.lvl, 0)}+${buyableEffect("r", 11)[0]}: Speed up your swimming. Current effect: x${format(tmp.e.swimmingEffect)}`
                 }],
                 ["bar", "swimmingBar"],
                 "blank",
                 ["display-text", function() {
-                    return `劳务lv${format(player.e.laboring.lvl, 0)}+${buyableEffect("r", 13)[0]}: 提升体力劳动的产出，目前效果 x${format(tmp.e.laboringEffect)}`
+                    return `Laboring lv${format(player.e.laboring.lvl, 0)}+${buyableEffect("r", 13)[0]}: Increase manual labor's output. Current effect: x${format(tmp.e.laboringEffect)}`
                 }],
                 ["bar", "laboringBar"],
                 "blank",
                 ["display-text", function() {
-                    return `烹饪lv${format(player.e.cooking.lvl, 0)}+${buyableEffect("r", 21)[0]}: 提升${res_name["food"]}转化效率，目前效果 x${format(tmp.e.cookingEffect)}`
+                    return `Cooking lv${format(player.e.cooking.lvl, 0)}+${buyableEffect("r", 21)[0]}: Increase ${res_name["food"]} conversion efficiency. Current effect: x${format(tmp.e.cookingEffect)}`
                 }],
                 ["bar", "cookingBar"],
                 "blank",
                 ["display-text", function() {
-                    return `贸易lv${format(player.e.trading.lvl, 0)}+${buyableEffect("r", 22)[0]}: 降低购买时的成本、提升卖出时的收益，目前效果 x${format(tmp.e.tradingEffect)}`
+                    return `Trading lv${format(player.e.trading.lvl, 0)}+${buyableEffect("r", 22)[0]}: Lower buying cost, Higher selling gain. Current effect: x${format(tmp.e.tradingEffect)}`
                 }],
                 ["bar", "tradingBar"],
                 "blank",
                 ["display-text", function() {
-                    return `钓鱼lv${format(player.e.fishing.lvl, 0)}+${buyableEffect("r", 23)[0]}: 提升水中资源的产出，目前效果 x${format(tmp.e.fishingEffect)}`
+                    return `Fishing lv${format(player.e.fishing.lvl, 0)}+${buyableEffect("r", 23)[0]}: Increase the output of water resources. Current effect: x${format(tmp.e.fishingEffect)}`
                 }],
                 ["bar", "fishingBar"],
                 "blank",
                 ["display-text", function() {
-                    return `索敌lv${format(player.e.hunting.lvl, 0)}+${buyableEffect("r", 31)[0]}: 提升发现敌人的概率，目前效果 x${format(tmp.e.huntingEffect)}`
+                    return `Hunting lv${format(player.e.hunting.lvl, 0)}+${buyableEffect("r", 31)[0]}: Increase chances to spot the enemy. Current effect: x${format(tmp.e.huntingEffect)}`
                 }],
                 ["bar", "huntingBar"]]
         },
 
-        "战斗技能": {
+        "Combat": {
             content: [
-                ["display-text", "</b>你的躯体会随着冒险变强，但如果死去，此页面的内容将被重置！</b>", {"font-size": "20px"}],
+                ["display-text", "</b>Your body will become grow stronger as you proceed,<br>but if you died, all content in this page will reset!</b>", {"font-size": "20px"}],
                 "blank",
                 
                 ["display-text", function() {
-                    return `<p>战斗经验不受生存技能等级加成，且会在四个技能间均分。</p><p>你也可以选择专精其中一项，使其独享经验！</p>`
+                    return `<p>Combat skill experience aren't boosted by survival skill,<br> and will automaticly spilt between four combat skill.</p><br><p>You can also choose to master one of the combat skill to give it all the experience!</p>`
                 }, {"font-size": "16px"}],
                 "blank",
                 ["display-text", function() {
-                    return `耐力lv${format(player.e.hp.lvl, 0)}: 提升HP上限，目前效果 x${format(tmp.e.hpEffect)}`
+                    return `Endurance lv${format(player.e.hp.lvl, 0)}: Increase Max HP. Current effect: x${format(tmp.e.hpEffect)}`
                 }],
                 ["row", [["bar", "hpBar"], ["clickable", 11]]],
                 "blank",
                 ["display-text", function() {
-                    return `攻击lv${format(player.e.atk.lvl, 0)}: 提升ATK，目前效果 x${format(tmp.e.atkEffect)}`
+                    return `Attack lv${format(player.e.atk.lvl, 0)}: Increase ATK. Current effect: x${format(tmp.e.atkEffect)}`
                 }],
                 ["row", [["bar", "atkBar"], ["clickable", 12]]],
                 "blank",
                 ["display-text", function() {
-                    return `防御lv${format(player.e.def.lvl, 0)}: 提升DEF，目前效果 x${format(tmp.e.defEffect)}`
+                    return `Defence lv${format(player.e.def.lvl, 0)}: Increase DEF. Current effect: x${format(tmp.e.defEffect)}`
                 }],
                 ["row", [["bar", "defBar"], ["clickable", 13]]],
                 "blank",
                 ["display-text", function() {
-                    return `速度lv${format(player.e.speed.lvl, 0)}: 提升行动速度，目前效果 x${format(tmp.e.speedEffect)}`
+                    return `Speed lv${format(player.e.speed.lvl, 0)}: Increase Speed of action. Current effect: x${format(tmp.e.speedEffect)}`
                 }],
                 ["row", [["bar", "speedBar"], ["clickable", 14]]],
             ],
@@ -310,7 +310,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.communication.cur_exp.div(player.e.communication.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.communication.cur_exp)}/${format(player.e.communication.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.communication.cur_exp)}/${format(player.e.communication.nxt_exp)}`},
             unlocked: true
         },
         swimmingBar: {
@@ -321,7 +321,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.swimming.cur_exp.div(player.e.swimming.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.swimming.cur_exp)}/${format(player.e.swimming.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.swimming.cur_exp)}/${format(player.e.swimming.nxt_exp)}`},
             unlocked: true
         },
         laboringBar: {
@@ -332,7 +332,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.laboring.cur_exp.div(player.e.laboring.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.laboring.cur_exp)}/${format(player.e.laboring.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.laboring.cur_exp)}/${format(player.e.laboring.nxt_exp)}`},
             unlocked: true
         },
         cookingBar: {
@@ -343,7 +343,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.cooking.cur_exp.div(player.e.cooking.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.cooking.cur_exp)}/${format(player.e.cooking.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.cooking.cur_exp)}/${format(player.e.cooking.nxt_exp)}`},
             unlocked: true
         },
         tradingBar: {
@@ -354,7 +354,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.trading.cur_exp.div(player.e.trading.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.trading.cur_exp)}/${format(player.e.trading.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.trading.cur_exp)}/${format(player.e.trading.nxt_exp)}`},
             unlocked: true
         },
         fishingBar: {
@@ -365,7 +365,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.fishing.cur_exp.div(player.e.fishing.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.fishing.cur_exp)}/${format(player.e.fishing.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.fishing.cur_exp)}/${format(player.e.fishing.nxt_exp)}`},
             unlocked: true
         },
         huntingBar: {
@@ -376,7 +376,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {}},
             progress() { return player.e.hunting.cur_exp.div(player.e.hunting.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.hunting.cur_exp)}/${format(player.e.hunting.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.hunting.cur_exp)}/${format(player.e.hunting.nxt_exp)}`},
             unlocked: true
         },
 
@@ -388,7 +388,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {"border-radius":"1px"}},
             progress() { return player.e.hp.cur_exp.div(player.e.hp.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.hp.cur_exp)}/${format(player.e.hp.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.hp.cur_exp)}/${format(player.e.hp.nxt_exp)}`},
             unlocked: true
         },
         atkBar: {
@@ -399,7 +399,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {"border-radius":"1px"}},
             progress() { return player.e.atk.cur_exp.div(player.e.atk.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.atk.cur_exp)}/${format(player.e.atk.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.atk.cur_exp)}/${format(player.e.atk.nxt_exp)}`},
             unlocked: true
         },
         defBar: {
@@ -410,7 +410,7 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {"border-radius":"1px"}},
             progress() { return player.e.def.cur_exp.div(player.e.def.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.def.cur_exp)}/${format(player.e.def.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.def.cur_exp)}/${format(player.e.def.nxt_exp)}`},
             unlocked: true
         },
         speedBar: {
@@ -421,14 +421,14 @@ addLayer("e", {
             baseStyle: {'background-color' : "#000000"},
             borderStyle() {return {"border-radius":"1px"}},
             progress() { return player.e.speed.cur_exp.div(player.e.speed.nxt_exp) },
-            display() { return `下一级经验: ${format(player.e.speed.cur_exp)}/${format(player.e.speed.nxt_exp)}`},
+            display() { return `Next: ${format(player.e.speed.cur_exp)}/${format(player.e.speed.nxt_exp)}`},
             unlocked: true
         },
     },
 
     clickables: {
         11: {
-            title: () => player.e.battle_exp_strat === "hp" ? "取消" : "专精",
+            title: () => player.e.battle_exp_strat === "hp" ? "Cancel" : "Master",
             display: () => "",
             style() {
                 let bg = player.e.battle_exp_strat === "hp" ? "#e67e22" : "#ffffff"
@@ -446,7 +446,7 @@ addLayer("e", {
             unlocked: true
         },
         12: {
-            title: () => player.e.battle_exp_strat === "atk" ? "取消" : "专精",
+            title: () => player.e.battle_exp_strat === "atk" ? "Cancel" : "Master",
             display: () => "",
             style() {
                 let bg = player.e.battle_exp_strat === "atk" ? "#e67e22" : "#ffffff"
@@ -464,7 +464,7 @@ addLayer("e", {
             unlocked: true,
         },
         13: {
-            title: () => player.e.battle_exp_strat === "def" ? "取消" : "专精",
+            title: () => player.e.battle_exp_strat === "def" ? "Cancel" : "Master",
             display: () => "",
             style() {
                 let bg = player.e.battle_exp_strat === "def" ? "#e67e22" : "#ffffff"
@@ -482,7 +482,7 @@ addLayer("e", {
             unlocked: true,
         },
         14: {
-            title: () => player.e.battle_exp_strat === "speed" ? "取消" : "专精",
+            title: () => player.e.battle_exp_strat === "speed" ? "Cancel" : "Master",
             display: () => "",
             style() {
                 let bg = player.e.battle_exp_strat === "speed" ? "#e67e22" : "#ffffff"

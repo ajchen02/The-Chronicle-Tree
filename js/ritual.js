@@ -85,7 +85,7 @@ addLayer("r", {
     upgrades: {
         11: {
             title: "Automatic - Peano village",
-            description: "In Peano village<, gain 0.5 spent time every second. (Infected by Indolent and global speed)",
+            description: "In Peano village, gain 0.5 spent time every second. (Infected by Indolent and global speed)",
             unlocked: () => hasAchievement("m", 22),
             cost: d(100),
         },

@@ -217,7 +217,7 @@ addLayer("g", {
     row: 0, // Row the layer is in on the tree (0 is the first row)
     displayRow: 0,
     hotkeys: [
-        {key: "g", description: "g: Put all the free time to Sea of Googol", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "g", description: "g: Put all the free time into Sea of Googol", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     doReset(resettingLayer) {
         // console.log("g:receiving " + resettingLayer)
