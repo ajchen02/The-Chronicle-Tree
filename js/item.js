@@ -1,8 +1,8 @@
 // Items, including variant resources, equipments
 
 var res_name = {
-    "gold": "金子",
-    "food": "食物",
+    "gold": "Gold",
+    "food": "Food",
     "fish": "Fish",
     "wood": "木材",
     "fiber": "纤维",

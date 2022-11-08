@@ -247,7 +247,7 @@ addLayer("e", {
                 ["bar", "laboringBar"],
                 "blank",
                 ["display-text", function() {
-                    return `Cooking lv${format(player.e.cooking.lvl, 0)}+${buyableEffect("r", 21)[0]}: Increase ${res_name["food"]} conversion efficiency. Current effect: x${format(tmp.e.cookingEffect)}`
+                    return `Cooking lv${format(player.e.cooking.lvl, 0)}+${buyableEffect("r", 21)[0]}: Improve ${res_name["food"]} conversion efficiency. Current effect: x${format(tmp.e.cookingEffect)}`
                 }],
                 ["bar", "cookingBar"],
                 "blank",

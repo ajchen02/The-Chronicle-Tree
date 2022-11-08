@@ -9,7 +9,7 @@ function clickable_style(bg) {
 }
 
 addLayer("p", {
-    name: "皮亚诺村", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "Peano The Village", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "p", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 2, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -25,8 +25,8 @@ addLayer("p", {
     },
     color: "#636e72",
     requires: d(1), // Can be a function that takes requirement increases into account
-    resource: "投入时间", // Name of prestige currency
-    baseResource: "空余时间", // Name of resource prestige is based on
+    resource: "Spent time", // Name of prestige currency
+    baseResource: "Free time", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.75, // Prestige currency exponent
@@ -49,9 +49,9 @@ addLayer("p", {
         let exp = d(1)
         return exp
     },
-    tooltip: () => `投入时间 <br>
+    tooltip: () => `Spent <br>
         &nbsp; ${formatWhole(player.p.points)}`,
-    tooltipLocked: () => "皮亚诺村",
+    tooltipLocked: () => "Peano Village",
     hotkeys: [
         {key: "p", description: "p: 将空余时间投入皮亚诺村区域", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -67,65 +67,65 @@ addLayer("p", {
 
     upgrades: {
         11: {
-            title: "闲逛",
-            description: "在村中散步，熟悉地形。本地投入时间转化效率x1.5",
+            title: "Wander",
+            description: "Wander in town and get familiar with the roads. Local spent time efficiency x 1.5",
             effect: () => d(1.5),
             cost: d(10),
         },
         12: {
-            title: "问路",
-            description: "向看上去就无所事事的村民问路。本地投入时间转化效率x1.3",
+            title: "Ask for directions",
+            description: "Asking villagers who seem to have nothing to do. Local spent time efficiency x 1.3",
             unlocked: () => hasUpgrade("p", 11),
             effect: () => d(1.3),
             cost: () => d(20).div(tmp.e.communicationEffect),
         },
         13: {
-            title: "搭话",
-            description: "向路过村民了解村子的情况。本地投入时间转化效率x1.2",
+            title: "Talk a bit",
+            description: "Learn about the village from the villagers passing by. Local spent time efficiency x 1.2",
             unlocked: () => hasUpgrade("p", 11),
             effect: () => d(1.2),
             cost: () => d(100).div(tmp.e.communicationEffect),
         },
         21: {
-            title: "拜访村长家",
-            description: "从村长那里也许能了解到一些重要的信息。",
+            title: "Visiting the village head",
+            description: "There may be some important information to be learned from the village head.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(20),
         },
         22: {
-            title: "拜访酒馆",
-            description: "根据惯例，酒馆是搜集情报的好地方。",
+            title: "Visiting the tavern",
+            description: "Taverns are usually a good place to gather information.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(30),
         },
         23: {
-            title: "拜访鱼铺",
-            description: "对海边的村民来说，大海永远是重要的资源。",
+            title: "Visiting the fish shop",
+            description: "The sea will always be an important resource for villagers living by the sea.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(40),
         },
         24: {
-            title: "拜访农家",
-            description: "帮忙做点农活，也许可以当做第一桶金。",
+            title: "Visiting the farmhouse",
+            description: "Help out with some farm work, perhaps you can have first bucket of money.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(30),
         },
         25: {
-            title: "拜访铁匠铺",
-            description: "如果想出门冒险，当然得准备趁手的工具和武器。",
+            title: "Visiting blacksmith",
+            description: "For an adventure, you have to prepare the tools and weapons.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(40),
         },
         26: {
-            title: "拜访商店",
-            description: "虽然是村中简陋的小店，但或许会有冒险中用得上的东西。",
+            title: "Visiting store",
+            description: "It's a humble shop in the village, but it might have something that could be useful in an adventure.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(100),
         },
 
         31: {
-            title: "购买渔具",
-            description: "可以在古戈尔之海钓鱼。钓鱼是RPG的特色，不能不品尝",
+            title: "Buy a fishing rod",
+            description: "To make fishing possible. <i>Fishing is a FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 23),
             cost: () => d(8).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -143,8 +143,8 @@ addLayer("p", {
         },
 
         32: {
-            title: "购买斧头",
-            description: "可以在幂次原野砍树。砍树是RPG的特色，不能不品尝",
+            title: "Buy an iron axe",
+            description: "To make chopping trees possible. <i>Chopping tree is a FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 25),
             cost: () => d(20).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -161,8 +161,8 @@ addLayer("p", {
         },
 
         33: {
-            title: "购买铁镐",
-            description: "可以在幂次原野挖矿。挖矿是RPG的特色，不能不品尝",
+            title: "Buy an iron pickaxe",
+            description: "To make mining possible. <i>Mining is a FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 25),
             cost: () => d(50).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -179,8 +179,8 @@ addLayer("p", {
         },
 
         34: {
-            title: "购买铁剑",
-            description: "可以在野外地图战斗。战斗是RPG的特色，不能不品尝",
+            title: "Buy an iron sword",
+            description: "To make fighting possible. <i>Fighting is a FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 25),
             cost: () => d(100).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -197,8 +197,8 @@ addLayer("p", {
         },
 
         35: {
-            title: "从皮亚诺村启程",
-            description: "需要拥有斧头、铁镐、铁剑中至少一件。解锁: 幂次原野",
+            title: "Set sail from Peano village",
+            description: "You need to have at least one of an axe, iron pickaxe or iron sword.<br> Unlock: The plain of squares.",
             unlocked: () => hasAchievement("m", 13),
             cost: d(20),
             canAfford: () => hasUpgrade("p", 32) || hasUpgrade("p", 33) || hasUpgrade("p", 34),
@@ -208,9 +208,9 @@ addLayer("p", {
         },
 
         41: {
-            title: "向铁匠请教 I",
-            description: () => `使用 ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} 与 ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} 作为赠礼，
-                永久解锁功能: 物品-制造，可以使用材料制造新的装备。`,
+            title: "Blacksmith's lesson I",
+            description: () => `Use ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} And ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} As a gift,
+                Permanent unlock feature: Item - Forge, which allows you to use materials to create new equipment.`,
             unlocked: () => hasUpgrade("p", 35),
             cost: () => d(300).div(tmp.e.communicationEffect),
             canAfford: () => player.i.fur.gte(d(40).div(tmp.e.tradingEffect)) && player.i.gold.gte(d(200).div(tmp.e.tradingEffect)),
@@ -222,9 +222,9 @@ addLayer("p", {
         },
         
         42: {
-            title: "向铁匠请教 II",
-            description: () => `使用 ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} 与 ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} 作为赠礼，
-                永久解锁功能: 物品-回炉，可以使用材料提升装备的数字。`,
+            title: "Blacksmith's lesson II",
+            description: () => `Use ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} And ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} As a gift,
+                Permanent unlock feature: Item - Baking, which allows you to use materials to raise equipment's number.`,
             unlocked: () => hasUpgrade("p", 35),
             cost: () => d(300).div(tmp.e.communicationEffect),
             canAfford: () => player.i.fur.gte(d(40).div(tmp.e.tradingEffect)) && player.i.gold.gte(d(200).div(tmp.e.tradingEffect)),
@@ -238,7 +238,7 @@ addLayer("p", {
 
     buyables: {
         11: {
-            title: "和村长交谈",
+            title: "Talk with village head",
             cost(x) {
                 c = x.mul(5).add(10)
                 c = c.div(tmp.e.communicationEffect).mul(buyableEffect("p", 13))
@@ -246,15 +246,15 @@ addLayer("p", {
             },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                let ret = `进度 ${format(cur_amount, 0)}/7\n\n`
+                let ret = `Progress: ${format(cur_amount, 0)}/7\n\n`
                 if (cur_amount.gte(1) && cur_amount.lte(7)) {
                     ret += full_dialogue["p11"][format(cur_amount, 0)-1] + "\n\n"
                 }
                 if (cur_amount.gte(3)) {
-                    ret += `当前效果：本地投入时间转化效率 x${format(this.effect())}\n`
+                    ret += `Currently: Local spent time efficiency x${format(this.effect())}\n`
                 }
                 if (cur_amount.lt(7)) {
-                    ret += `下一级价格: ${format(this.cost(cur_amount))} 投入时间`
+                    ret += `Next: ${format(this.cost(cur_amount))} spent time`
                 }
                 return ret
             },
@@ -273,7 +273,7 @@ addLayer("p", {
             }
         },
         12: {
-            title: "和村长交谈 II - 数字学概论101",
+            title: "Talk with village head II - Numerology 101",
             cost(x) {
                 c = x.mul(5).add(50)
                 c = c.div(tmp.e.communicationEffect).mul(buyableEffect("p", 13))
@@ -281,12 +281,12 @@ addLayer("p", {
             },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                let ret = `进度 ${format(cur_amount, 0)}/14\n\n`
+                let ret = `Progress: ${format(cur_amount, 0)}/14\n\n`
                 if (cur_amount.gte(1) && cur_amount.lte(14)) {
                     ret += full_dialogue["p12"][format(cur_amount, 0)-1] + "\n\n"
                 }
                 if (cur_amount.lt(14)) {
-                    ret += `下一级价格: ${format(this.cost(cur_amount)) } 投入时间`
+                    ret += `Next: ${format(this.cost(cur_amount)) } spent time`
                 }
                 return ret
             },
@@ -301,7 +301,7 @@ addLayer("p", {
             }
         },
         13: {
-            title: "买酒，和酒客交谈",
+            title: "Buying wine, and talking to drinkers",
             cost(x) {
                 let c = x.mul(1).add(2)
                 c = c.div(tmp.e.communicationEffect).mul(buyableEffect("p", 13))
@@ -309,13 +309,13 @@ addLayer("p", {
             },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                let ret = `进度 ${format(cur_amount, 0)}/8\n\n`
+                let ret = `Progress: ${format(cur_amount, 0)}/8\n\n`
                 if (cur_amount.gte(1) && cur_amount.lte(8)) {
                     ret += full_dialogue["p13"][format(cur_amount, 0)-1] + "\n\n"
                 }
-                ret += `当前效果：村中对话花费 x${format(this.effect())}\n`
+                ret += `Currently: conversation in village cost x${format(this.effect())}\n`
                 if (cur_amount.lt(8)) {
-                    ret += `下一级价格: ${format(this.cost(cur_amount))} ${res_name["gold"]}`
+                    ret += `Next: ${format(this.cost(cur_amount))} ${res_name["gold"]}`
                 }
                 return ret
             },
@@ -334,18 +334,18 @@ addLayer("p", {
             }
         },
         14: {
-            title: "给路边的流浪汉一点吃的",
+            title: "Give food to the homeless on the roadside",
             cost(x) { 
                 return d(2).add(d(1).mul(x)).mul(buyableEffect("p", 13))
             },
             display() {
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                let ret = "进度 " + format(cur_amount, 0) + "/8\n"
+                let ret = "Progress: " + format(cur_amount, 0) + "/8\n"
                 if (cur_amount.gte(1) && cur_amount.lte(8)) {
                     ret += full_dialogue["p14"][format(cur_amount, 0)-1] + "\n"
                 }
                 if (cur_amount.lt(8)) {
-                    ret += `下一级价格: ${format(this.cost(cur_amount))} ${res_name["food"]}`
+                    ret += `Next: ${format(this.cost(cur_amount))} ${res_name["food"]}`
                 }
                 return ret
             },
@@ -367,12 +367,12 @@ addLayer("p", {
 
     clickables: {
         11: {
-            "title": "在酒馆帮忙",
+            "title": "Helping out at tavern",
             display() {
-                let disp = `使用当前投入时间的50%，获得少量报酬，并增长交流能力。\n
-                收益:
+                let disp = `Use 50% of current spent time to earn small amount of gold, and improve your communiation.\n
+                Gain:
                 ${format(player.p.points.mul(0.5).mul(tmp.p.tavernIncome))} ${res_name["gold"]}
-                ${format(player.p.points.mul(0.5).mul(tmp.p.tavernExp))} 经验`
+                ${format(player.p.points.mul(0.5).mul(tmp.p.tavernExp))} Experience`
                 return disp
             },
             style() {
@@ -394,13 +394,13 @@ addLayer("p", {
         },
         
         12: {
-            "title": "在农家帮忙",
+            "title": "Helping out at farmhouse",
             display() {
-                let disp = `使用当前投入时间的50%，获得较多报酬，并增长劳务能力。\n
-                收益:
+                let disp = `Use 50% of current spent time to earn large amount of gold, and improve your labor.\n
+                Gain:
                 ${format(player.p.points.mul(0.5).mul(tmp.p.farmGoldIncome))} ${res_name["gold"]}
                 ${format(player.p.points.mul(0.5).mul(tmp.p.farmFoodIncome))} ${res_name["food"]}
-                ${format(player.p.points.mul(0.5).mul(tmp.p.farmExp))} 经验`
+                ${format(player.p.points.mul(0.5).mul(tmp.p.farmExp))} Experience`
                 return disp
             },
             style() {
@@ -420,12 +420,12 @@ addLayer("p", {
 
         
         13: {
-            "title": "卖鱼",
+            "title": "Sell fish",
             display() {
-                let disp = `卖掉当前${res_name["fish"]}的50%，获得报酬，并增长交易能力。\n
-                将${format(player.i.fish.mul(0.5))}${res_name["fish"]}换为:
+                let disp = `Sell 50% of current ${res_name["fish"]} to earn paid, and improve your trading.\n
+                Trade ${format(player.i.fish.mul(0.5))} ${res_name["fish"]} with:
                 ${format(player.i.fish.mul(0.5).mul(tmp.p.sellFishIncome))} ${res_name["gold"]}
-                ${format(player.i.fish.mul(0.5).mul(tmp.p.sellFishExp))} 经验`
+                ${format(player.i.fish.mul(0.5).mul(tmp.p.sellFishExp))} Experience`
                 return disp
             },
             style() {
@@ -444,12 +444,12 @@ addLayer("p", {
 
         
         14: {
-            "title": "将鱼制成食物",
+            "title": "Cook fish",
             display() {
-                let disp = `处理当前${res_name["fish"]}的50%，转化为对应的${res_name["food"]}，并增长烹饪能力。\n
-                将${format(player.i.fish.mul(0.5))}${res_name["fish"]}换为:
+                let disp = `Fook 50% of current ${res_name["fish"]} to make ${res_name["food"]}, and improve your cooking.\n
+                Trade ${format(player.i.fish.mul(0.5))} ${res_name["fish"]} with:
                 ${format(player.i.fish.mul(0.5).mul(tmp.p.dealFishIncome))} ${res_name["food"]}
-                ${format(player.i.fish.mul(0.5).mul(tmp.p.dealFishExp))} 经验`
+                ${format(player.i.fish.mul(0.5).mul(tmp.p.dealFishExp))} Experience`
                 return disp
             },
             style() {
@@ -468,12 +468,12 @@ addLayer("p", {
 
         
         15: {
-            "title": "购买食物",
+            "title": "Buy foods",
             display() {
-                let disp = `花${res_name["gold"]}购买${res_name["food"]}，并增长交易能力。\n
-                单次效益:
-                + 10 ${res_name["food"]}\n- ${format(tmp.p.buyFoodCost)} ${res_name["gold"]}
-                ${format(tmp.p.buyFoodExp)} 经验`
+                let disp = `Cost ${res_name["gold"]} to buy ${res_name["food"]}, and improve your trading.\n
+                Trade:
+                + 10 ${res_name["food"]} for\n- ${format(tmp.p.buyFoodCost)} ${res_name["gold"]}
+                ${format(tmp.p.buyFoodExp)} Experience`
                 return disp
             },
             style() {
@@ -595,10 +595,10 @@ addLayer("p", {
     },
 
     tabFormat: {
-        "主界面": {
+        "Main": {
             content: [
             ["display-text", function() {
-                return `在皮亚诺村区域，你目前有<b> ${format(player.p.points)} </b>投入时间`    
+                return `In Peano the village, You have <b> ${format(player.p.points)} </b> Spent time`    
             }, {"font-size": "20px"}],
             
             "blank",
@@ -611,7 +611,7 @@ addLayer("p", {
             "clickables",
             "blank",
         ]},
-        "剧情记录": {
+        "Story": {
             content: [
                 ["infobox", "lore"]
             ]

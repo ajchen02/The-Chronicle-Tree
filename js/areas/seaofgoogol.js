@@ -102,7 +102,7 @@ addLayer("g", {
         13: { 
             "title": "Fishing",
             display() {
-                return "(Do not forget to equip fishing rod)"
+                return "(Do not forget to equip fishing rod first)"
             },
             style: {
                 "background-color": "#ffffff"
@@ -141,7 +141,7 @@ addLayer("g", {
     upgrades: {
         11: {
             title: "Be familiar with water",
-            description: "Local spent time conversion efficiency x 2.5",
+            description: "Local spent time efficiency x 2.5",
             effect: () => d(2.5),
             cost: d(10),
             currencyDisplayName: () => res_name["fish"],

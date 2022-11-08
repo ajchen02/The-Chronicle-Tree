@@ -3,7 +3,7 @@
 
 addLayer("m", {
     name: "memory", // This is optional, only used in a few places, If absent it just uses the layer id.
-    disp_symbol: "Memory",
+    disp_symbol: "MEM",
     symbol: "M", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -38,7 +38,7 @@ addLayer("m", {
             onComplete() {player.m.milestone_cnt = player.m.milestone_cnt.add(1)},
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "You recalled this aren't the first time you reborn. But you also remembered that, normally you won't lose memories on reborn."
+                    return "You recall that you aren't reborn for the first time. Yet you also recall that, a normal rebirth does not cause you to lose your memories."
                 } else {
                     return "Locked."
                 }
@@ -50,7 +50,7 @@ addLayer("m", {
             onComplete() {player.m.milestone_cnt = player.m.milestone_cnt.add(1)},
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "Stand on unfamiliar familiar dry land, you recalled an village near by.<br>Unlock location: Peano The Village."
+                    return "Standing on unfamiliar but somehow familiar land, you recall the location of a nearby village.<br>Unlock location: Peano The Village."
                 } else {
                     return "Locked."
                 }
@@ -63,7 +63,7 @@ addLayer("m", {
             done: () => hasUpgrade("p", 12),
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "After communicating with villagers, you memorised the way out of the village. Unlock Upgrade-Set sail from Peano village"
+                    return "After communicating with the villagers, you recall the road leading out of the village. Unlock Upgrade-Set sail from Peano village"
                 } else {
                     return "Locked."
                 }
@@ -76,7 +76,7 @@ addLayer("m", {
             done: () => getBuyableAmount("p", 12).gte(14),
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "You recalled the knowledge of number and order of magnitude. Unlock subpage: Reborn-Number"
+                    return "You recall the knowledge of number and order of magnitude. Unlock subpage: Reborn-Number"
                 } else {
                     return "Complete the communication of village head to unlock."
                 }
@@ -84,13 +84,13 @@ addLayer("m", {
         },
 
         15: {
-            name: "怠惰的记忆",
+            name: "Memory of Sloth",
             unlocked: () => hasAchievement("m", 12), 
             onComplete() {player.m.milestone_cnt = player.m.milestone_cnt.add(1)},
             done: () => getBuyableAmount("p", 14).gte(8),
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "在见识了一个流浪汉的生活之后，你意识到偷懒有时也是一门艺术。解锁页面：怠惰"
+                    return "After seeing the life of a homeless man, you realize that being lazy is also an art sometimes. Unlock page: Sloth"
                 } else {
                     return "Locked."
                 }
@@ -115,13 +115,13 @@ addLayer("m", {
         },
 
         21: {
-            name: "村庄的记忆",
+            name: "Memory of village",
             unlocked: () => hasAchievement("m", 16),
             onComplete() {player.m.milestone_cnt = player.m.milestone_cnt.add(1)},
             done: () => tmp.p.layerFinished,
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "你已经了解了皮亚诺村的一切——如果之后再回到这里，你的一切都会更有效率。皮亚诺村投入时间x2"
+                    return "You've learned everything about the village of Piano - and if you return here afterwards, everything will be more efficient for you. Peano village spent time x2"
                 } else {
                     return "购买皮亚诺村的全部内容以解锁"
                 }
@@ -161,7 +161,7 @@ addLayer("m", {
     infoboxes: {
         desc: {
             title: "About Memory",
-            body() { return "As the journey continue, lost memories may gradually retrieved -- or new ones may gained. Memories will be preserved forever, even after the death and reborn." }
+            body() { return "As the journey continues, lost memories may be gradually retrieved -- and perhaps new memories may be gained. Memories will be preserved forever, even after death and reborn." }
         }
     },
 

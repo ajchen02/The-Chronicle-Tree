@@ -19,7 +19,7 @@ let sigil_template = (symbol) => {
 
 addLayer("r", {
     name: "reborn", // This is optional, only used in a few places, If absent it just uses the layer id.
-    disp_symbol: "Reborn",
+    disp_symbol: "RBN",
     symbol: "R", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -92,7 +92,7 @@ addLayer("r", {
 
         12: {
             title: "Sequence Breaking I",
-            description: "<i>Why do I MUST buying a weapon?</i><br>When not equip any weapon, You use your Fist (Number 1, ATK 3). And now you unlock The plain of squares without Upgrade-Set sail from Peano village.",
+            description: "<i>Why do I MUST buying a weapon?</i><br>When equip NO weapon, You use your Fist (Number 1, ATK 3). And now you unlock The plain of squares without Upgrade-Set sail from Peano village.",
             unlocked: () => hasUpgrade("r", 11),
             cost: d(300),
         },
