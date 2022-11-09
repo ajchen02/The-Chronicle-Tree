@@ -106,13 +106,13 @@ addLayer("p", {
         },
         24: {
             title: "Visiting the farmhouse",
-            description: "Help out with some farm work, perhaps you can have first bucket of money.",
+            description: "Help out with some farm work, perhaps you can make some money.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(30),
         },
         25: {
             title: "Visiting blacksmith",
-            description: "For an adventure, you have to prepare the tools and weapons.",
+            description: "For an adventure, you have to prepare tools and weapons.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(40),
         },
@@ -446,7 +446,7 @@ addLayer("p", {
         14: {
             "title": "Cook fish",
             display() {
-                let disp = `Fook 50% of current ${res_name["fish"]} to make ${res_name["food"]}, and improve your cooking.\n
+                let disp = `Cook 50% of current ${res_name["fish"]} to make ${res_name["food"]}, and improve your cooking.\n
                 Trade ${format(player.i.fish.mul(0.5))} ${res_name["fish"]} with:
                 ${format(player.i.fish.mul(0.5).mul(tmp.p.dealFishIncome))} ${res_name["food"]}
                 ${format(player.i.fish.mul(0.5).mul(tmp.p.dealFishExp))} Experience`
