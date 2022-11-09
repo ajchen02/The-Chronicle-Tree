@@ -7,7 +7,7 @@ var res_name = {
     "wood": "木材",
     "fiber": "纤维",
     "mineral": "矿物",
-    "fur": "皮毛",
+    "fur": "Fur",
 }
 
 var res_list = [

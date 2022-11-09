@@ -1,51 +1,51 @@
 var full_dialogue = {
     "p11": [
-        "> 您是旅行者吗？作为村长的我本该来亲自迎接，但……真不巧，我还在给孩子们授课，实在抽不开身。您此行准备前往哪里？",
-        "> 失忆？这……太不妙了…你是从海里来的？这可真稀奇……想必你一定有过什么奇遇吧。",
-        "> 总之，如果您想在村子里多停留一段时间，我可以和大家打声招呼，让他们多关照。",
-        "> 不过，您最好不要轻易走出村子……没有记忆的话，去村外的原野是很危险的，虽然这附近的数量级都不算太高，但如果遇到数字超过10的野兽的话……",
-        "> 咦，您连数量级的概念都忘记了？……竟然如此严重…我想您可能有必要听一听，毕竟这可是生活在这个世上的基本常识…",
-        "> 我一直负责为村里的大家传授基本的数学知识——从皮亚诺公理开始到实数理论，我对自己的授课水平还是有自信的。",
-        "> 我会尽量说得简洁明了，如果你不急着干别的，我们现在就开始吧：数字学概论101——"
+        "> Are you a traveler? As the head of Peano village, I should have come to greet you in person, but... Unfortunately, I'm still teaching the childs and I can't just walk away. Where did you plan to go on this trip?",
+        "> Memory loss? This... is too bad... You came from the sea? This is really rare... You must had some miraculous experience.",
+        "> Anyway, if you want to stay in the village for a while longer, I can say hello to everyone to make you more comfortable.",
+        "> However, you'd better not go out of the village without attention... Without memory, it is very dangerous to go to the along outside the village. Although none of the OoM around here is too high, but if you encounter a beast with a number over 10...",
+        "> Huh, you have even forgotten the concept of Orders of Magnitude?... To this point... I think you must neet to learn it. After all, this is the basic common sense to living in this world...",
+        "> I have been teaching basic mathematics to everyone in the village - starting from Peano's axioms to the theory of real numbers - and I am still confident in my teaching skills.",
+        "> I'll try to be simple and clear, so if you're not in a hurry to do anything else, let's get started now: Numerology 101——"
     ],
 
     "p12": [
-        "> 据说，造物主在创造万物时，为每件物体都赋予了一个内在的属性，也就是<b>数字</b>。",
-        "> 数字最直接的体现就是物理尺度。例如，同样是一棵树，数字10的树，长宽高都是数字1的树的10倍。很直观吧？",
-        "> 例如，本人的数字就是准确的1，我们村里的一切物体也都在0.9~1.1的范围内。一个地区内的事物有着相近的数字，这种现象一般被称为<b>数量级效应</b>。",
-        "> 而走出这个村子，外面的世界就危险得多了。最近的原野虽然也有与我们相近的野兽，但若迷路走到深处，可能会遇到数字达到10、100，甚至更高的生物。",
-        "> 数字差达到那种地步，就算只是被不小心踩上一脚，就会当场丧命的，连逃命的机会都没有。",
-        "> 而你醒来见到的那片海，则据说越往深处数量级越高，中心处甚至高达1e100——这已经远远超出我们人类可以想象的尺度了。",
-        "> 不仅是野兽，也有数量级更高的人类存在，但幸好他们不会对我们的小村子起什么歹念，我们还能过上比较平静的生活。",
-        "> 原因很简单，随数字的上升，生存所需的资源也会呈立方上涨。一只数字5的狼，体重就是数字1的125倍，所要吃的食物也是原先的125倍。",
-        "> 除了食物，金子也是一样，我们这里的1金币，到数量级10的镇里，就只有0.001倍的购买力。所以劫掠我们这种村庄，也不会有什么好处吧。",
-        "> 最后，还有比较难理解的一点——数字不仅会增加物理尺度，还会直接加快时间流速。",
-        "> 据说，数字更高的人类，一切行动都会变快。——不是因为身材高大而变快，而是整个生命体的时间流逝都会更快——不过我无法亲身体验，也说不清那究竟是什么意思。",
-        "> ……我为什么会知道这么多…？……曾经有位旅客，路过这里时和我聊了一会——他当时对这里很有兴趣，说这里是很罕见的，数量级精确为1的地区。",
-        "> 他离开后，我觉得关于数字的理论很有意义，就告诉了这里的村民和孩子们。",
-        "> 不过，我唯一不明白的是，究竟是谁定义了<b>1的标准</b>。为什么把这里的数量级定义为1，而不是10或者0.1呢……不过对村里的大家来说，这都算不上什么大问题吧。"
+        "> It is said that, when the Creator created everything, He gave an intrinsic property to each object, which is <b>Number</b>.",
+        "> The most direct manifestation of the numbers is the physical scale. For example, on the same type of tree, the tree with number of 10 will have 10 time of the length, width and height of the tree with number 1. Isn't it direct?",
+        "> For instance, mine number is an exact 1, and everything in our village is in the range of 0.9 ~ 1.1 . The phenomenon of things within a region having similar numbers is generally known as <b>Orders of Magnitude Effect</b> (OoM Effect).",
+        "> Speaking of outside, it's far more dangerous than just plain land. It contains not only beast with number near us, but if you get lost in the depths, you may encounter creature with number 10, 100, or even higher.",
+        "> To that scale of differences, even if you were just be accidentally stepped on, you will be killed on the spot, without any chance to escape.",
+        "> And the sea that you wake up to, it is said that the deeper you go, the higher the OoM, and the center even reaches as high as 1e100—— This is far more beyond our.",
+        "> Human also exist on the higher OoM, but fortunately they don't mind our little village and we can still live a relatively peaceful life.",
+        "> The reason is simple: as the number rises, the resources needed to survive also rise cubically. A wolf with number 5 will have a 125 times weight, and need to eat 125 times food.",
+        "> Other than food, gold is also applied to this rule. If you take 1 golden coin of our village to an town of 10 OoM, it will only have 0.0001 times purchasing power. So plundering villages like ours won't do any goods.",
+        "> At last, there are an more difficult points to understand—— Number will not only increase physical scale, but also strightly speed up time speed.",
+        "> It is said that, human with higher number will have everything faster.—— Not because their body become bigger, but the whole life being will have faster time—— But I can't experience it myself, and I can't say exactly what that means.",
+        "> ...Why I know this?... There was a passager passing by, talked to me for a while—— he was very interested in the place at that time, says our OoM is precised to 1, which is very rare.",
+        "> After he left, I thought the theory about numbers made sense and told the villagers and children here.",
+        "> The only thing I don't understand, though, is who defind <b>The standard of 1</b>. Why definded our OoM as 1, rather than 10 or 0.1 ....But I guess it's not a big deal for everyone in the village."
     ],
 
     "p13": [
-        "闲坐的大叔: 唷，你是哪来的？海那边？你居然没卷进浪里死掉，真是有福气。过来过来，让我蹭蹭你的福气，下回玩牌用得上——",
-        "端酒的店员: 本店的麦酒味道如何？这次是高数字的大粒小麦，用了新的酿酒法，老板娘很想听听大家的评价——",
-        "兼职冒险家: 你是冒险者？唉，真好啊，我们这么个小破地方，连正经的任务都接不到，想学雪狼当什么传奇佣兵都没机会啊。来来来，讲讲你的传奇故事——失忆？切。那算了。",
-        "休憩的裁缝: 别过来！！我在编故事，正到精彩的地方呢，全给你打岔打断了。你问我怎么不写下来？蠢货——会被虫子吃光的不知道吗？",
-        "托腮的小孩: ……村子外面到底有什么呢？我只知道一边是海、一边是平原，但是，村长说我们就算游一辈子、走一辈子，也见不到更外面的世界……",
-        "呢喃的醉客: ………至上的真龙………阿列夫……保佑……………………",
-        "不醉的铁匠: 外人呐。好久没见过了。上次来村里的外人，花一笔大钱买走我的磨刀石。你说，他到底图什么？",
-        "苦恼的猎人: 唉……那虫子到底是从哪冒出来的呢…好不容易找到半页卷轴……连看一眼都没来得及……",
+        "Uncle Idly sitting: Hey, where ya come from? Sea? You're SO lucky that you didn't get caught up in the waves and die. come here and let me share some of your luck, I need them next card game——",
+        "Clerk Serving wine: How does our mulled wine taste? This time we used new method and high number wheat, the owner is very interested in hearing everyone's comments——",
+        "Part Time Adventurer: You are an Adventurer? Ugh, how nice of you. We can't even have an proper mission in our little shitty place, not to mension looking up to what Snowolf the legendary mercenary. Here, please tell us your legend.—— Memory lost? BOO. Forget about that.",
+        "Tailor Resting: STOP THERE!! I'm trying making an story, and you broke my thought in the very good part. Why didn't I wrote that down? You Idiot——  Don't you know it will be eated by the bugs?",
+        "Child Cheek Resting: ...What is there outside the village? I only know a sea on one side and a plain on the other, but the village head said that even if we swim and walk for the rest of our lives, we will never see the outside world...",
+        "Murmuring Drunkard: ......... The Supreme True Dragon ......... Aleph ...... bless ........................",
+        "Not Drunked Blacksmith: New faces. It's been a while since I've seem one. Last outsider spent a large sum of money to buy away my sharpening stone. What does he want after all?",
+        "Distressed Hunter: Ugh... Where the hell does that bug appear... It was hard to find a scroll... even to take a look was not...",
     ],
 
     "p14": [
-        "流浪汉接过你的食物，什么都没说。",
-        "流浪汉接过你的食物，打了个哈欠。",
-        "流浪汉接过你的食物，躺在了地上。",
-        "流浪汉接过你的食物，翘起二郎腿。",
-        "流浪汉接过你的食物，抠了抠鼻孔。",
-        "流浪汉接过你的食物，继续晒太阳。",
-        "流浪汉接过你的食物，哼起了小曲。",
-        "流浪汉接过你的食物，吹起了口哨。"
+        "The homeless man takes your food, and says nothing.",
+        "The homeless man takes your food, and yawned loudly.",
+        "The homeless man takes your food, and lying aground.",
+        "The homeless man takes your food, and crossing legs.",
+        "The homeless man takes your food, and picked nose.",
+        "The homeless man takes your food, and continue sunbathing.",
+        "The homeless man takes your food, and hummed song",
+        "The homeless man takes your food, and whistled."
     ],
 
     "mp21": [

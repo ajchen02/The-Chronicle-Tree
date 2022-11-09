@@ -492,13 +492,13 @@ addLayer("p", {
 
     infoboxes: {
         lore: {
-            title: "故事",
+            title: "Story",
             body() {
-                let disp = "你来到海边异常平和的小村庄。你对这里有着朦胧的印象，但似乎没有一个人认识你。"
+                let disp = "You have arrived in an unusually peaceful small village beside sea. You have a faint impression of the place, but no one seems to recognise you."
 
                 let keys = [11, 12, 13, 14]
                 let dkeys = ["p11", "p12", "p13", "p14"]
-                let titles = ["和村长交谈", "和村长交谈 II - 数字学概论", "买酒，和酒客交谈", "给路边的流浪汉一点吃的"]
+                let titles = ["Talk with village head", "Talk with village head II - <br>Numerology 101", "Buying wine, and talking to drinkers", "Give food to the homeless on the roadside"]
 
                 for (let i = 0; i < keys.length; i++) {       
                     if (tmp.p.buyables[keys[i]].unlocked) {

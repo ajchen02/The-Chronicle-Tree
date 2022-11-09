@@ -123,7 +123,7 @@ addLayer("m", {
                 if (hasAchievement("m", this.id)) {
                     return "You've learned everything about the village of Piano - and if you return here afterwards, everything will be more efficient for you. Peano village spent time x2"
                 } else {
-                    return "购买皮亚诺村的全部内容以解锁"
+                    return "Experience everything about Peano village to unlock this."
                 }
             }
         },
