@@ -1,8 +1,8 @@
 // Sloth, a.k.a Impatience
 
 addLayer("s", {
-    name: "怠惰", // This is optional, only used in a few places, If absent it just uses the layer id.
-    disp_symbol: "怠惰",
+    name: "Sloth", // This is optional, only used in a few places, If absent it just uses the layer id.
+    disp_symbol: "SLH",
     symbol: "S", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 4, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -27,19 +27,19 @@ addLayer("s", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return d(1)
     },
-    tooltip:() => "怠惰: " + format(player.s.sloth),
-    tooltipLocked:() => "怠惰: " + format(player.s.sloth),
+    tooltip:() => "Sloth: " + format(player.s.sloth),
+    tooltipLocked:() => "Sloth: " + format(player.s.sloth),
     prestigeNotify: () => false,
     
     buyables: {
         11: {
-            title: "感受怠惰",
+            title: "Feel Sloth",
             cost(x) { return d(2).pow(x).mul(120) },
             display() { 
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                return `怠惰上限x2\n
-                当前上限: ${format(player.s.limit)}
-                下一级价格: ${format(this.cost(cur_amount))}` 
+                return `Max Sloth x2\n
+                Currently: ${format(player.s.limit)}
+                Next cost: ${format(this.cost(cur_amount))}` 
             },
             canAfford() { return player[this.layer].sloth.gte(this.cost(getBuyableAmount(this.layer, this.id))) },
             buy() {
@@ -52,13 +52,13 @@ addLayer("s", {
             }
         },
         12: {
-            title: "感受时光流逝",
+            title: "Feel time passing",
             cost(x) { return d(3).pow(x).mul(40) },
             display() { 
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                return `让全局时间加快x1.1 \n
-                当前效果: ${format(this.effect(cur_amount))}x
-                下一级价格: ${format(this.cost(cur_amount))}` 
+                return `Global time speed x1.1 \n
+                Currently: ${format(this.effect(cur_amount))}x
+                Next cost: ${format(this.cost(cur_amount))}` 
             },
             canAfford() { 
                 return player[this.layer].sloth.gte(this.cost(getBuyableAmount(this.layer, this.id))) 
@@ -73,13 +73,13 @@ addLayer("s", {
             }
         },
         13: {
-            title: "更多怠惰",
+            title: "More Sloth",
             cost(x) { return d(2.5).pow(x).mul(80) },
             display() { 
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                return `怠惰增长速率x1.5 \n
-                当前效果: ${format(this.effect(cur_amount))}x
-                下一级价格: ${format(this.cost(cur_amount))}` 
+                return `Sloth x1.5 \n
+                Currently: ${format(this.effect(cur_amount))}x
+                Next cost: ${format(this.cost(cur_amount))}` 
             },
             canAfford() { return player[this.layer].sloth.gte(this.cost(getBuyableAmount(this.layer, this.id))) },
             buy() {
@@ -106,7 +106,7 @@ addLayer("s", {
     },
 
     tabFormat: [["display-text", function() {
-        return `你拥有 <span style='color:#f1c40f; font-size:25px'>${format(player.s.sloth, 0)}</span> / ${format(player.s.limit)} 怠惰 (${format(player.s.speed)}/s)`
+        return `You have <span style='color:#f1c40f; font-size:25px'>${format(player.s.sloth, 0)}</span> / ${format(player.s.limit)} Sloth (${format(player.s.speed)}/s)`
      }, {"font-size": "20px"}],
                 "blank",
                 "buyables"],

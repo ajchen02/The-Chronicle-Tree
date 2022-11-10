@@ -12,7 +12,7 @@ var full_equip_list = [
 var full_equips = {
     // fishingrod
     "fishingrod0": {
-        dispn: "鱼竿",
+        dispn: "Fishing rod",
         etype: "fishingrod",
         cost: {
             wood: d(20),
@@ -23,7 +23,7 @@ var full_equips = {
 
     // axe
     "axe0": {
-        dispn: "斧头",
+        dispn: "Iron axe",
         etype: "axe",
         cost: {
             wood: d(10),
@@ -34,7 +34,7 @@ var full_equips = {
 
     // pickaxe
     "pickaxe0": {
-        dispn: "铁镐",
+        dispn: "Iron pickaxe",
         etype: "pickaxe", 
         cost: {
             wood: d(10),
@@ -45,7 +45,7 @@ var full_equips = {
 
     // weapon
     "sword0": {
-        dispn: "铁剑", 
+        dispn: "Iron sword", 
         etype: "weapon",
         cost: {
             mineral: d(5)
@@ -56,7 +56,7 @@ var full_equips = {
     },
     
     "bow0": {
-        dispn: "长弓",
+        dispn: "Long bow",
         etype: "weapon",
         cost: {
             wood: d(40),
@@ -64,8 +64,8 @@ var full_equips = {
         },
         atk: d(18),
         desc: (number) => `ATK ${format(number.mul(18))}
-            速度x0.9
-            预行动50%`,
+            SPD x0.9
+            Pre-Action 50%`,
         applyEffect: () => {
             player.b.pl.speed = player.b.pl.speed.mul(0.9)
             player.b.pl_action = tmp.b.fullActionBar.mul(0.5)
@@ -74,7 +74,7 @@ var full_equips = {
     },
     
     "dagger0": {
-        dispn: "匕首",
+        dispn: "Dagger",
         etype: "weapon",
         cost: {
             wood: d(10),
@@ -82,8 +82,8 @@ var full_equips = {
         },
         atk: d(8),
         desc: (number) => `ATK ${format(number.mul(8))}
-            速度x1.2
-            攻击附加流血`,
+            SPD x1.2
+            Apply bleeding`,
         applyEffect: () => {
             player.b.pl.speed = player.b.pl.speed.mul(1.2)
             player.b.pl.traits["induce_bleeding"] = undefined
@@ -94,7 +94,7 @@ var full_equips = {
 
     // shield
     "shield0": {
-        dispn: "铁盾",
+        dispn: "Iron shield",
         etype: "shield",
         cost: {
             mineral: d(8)
@@ -106,7 +106,7 @@ var full_equips = {
 
     // armor
     "armor0": {
-        dispn: "铁甲",
+        dispn: "Iron armor",
         etype: "armor",
         cost: {
             mineral: d(10)
@@ -117,7 +117,7 @@ var full_equips = {
     },
     
     "cloth": {
-        dispn: "软甲",
+        dispn: "Soft armor",
         etype: "armor",
         cost: {
             fiber: d(10),
@@ -125,7 +125,7 @@ var full_equips = {
         },
         def: d(1),
         desc: (number) => `DEF ${format(number.mul(1))}
-            速度x1.2`,
+            SPD x1.2`,
         applyEffect: () => {
             player.b.pl.speed = player.b.pl.speed.mul(1.2)
         },
@@ -134,7 +134,7 @@ var full_equips = {
 
     // ring
     "grassring": {
-        dispn: "草叶戒指",
+        dispn: "Grass ring",
         etype: "ring",
         cost: {
             fiber: d(10)
