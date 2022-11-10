@@ -93,12 +93,12 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	function() {
-		return `Current Endgame: Pass the second instance`
+		return `Current Endgame: Pass the second battle zone`
 	},
 
 	function() {
 		if (player.r.is_dead) {
-			return `<p>${player.r.last_death_cause}</p><p>Your body has already DEAD! You can't do anything until you reborn.</p>`
+			return `<p>${player.r.last_death_cause}</p><p>YOU DEAD! You can't do anything until you reborn.</p>`
 		}
 
 	},

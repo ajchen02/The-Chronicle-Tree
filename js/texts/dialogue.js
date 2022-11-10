@@ -19,7 +19,7 @@ var full_dialogue = {
         "> Human also exist on the higher OoM, but fortunately they don't mind our little village and we can still live a relatively peaceful life.",
         "> The reason is simple: as the number rises, the resources needed to survive also rise cubically. A wolf with number 5 will have a 125 times weight, and need to eat 125 times food.",
         "> Other than food, gold is also applied to this rule. If you take 1 golden coin of our village to an town of 10 OoM, it will only have 0.001 times purchasing power. So plundering villages like ours won't do any goods.",
-        "> At last, there are an more difficult points to understand—— Number will not only increase physical scale, but also slightly speed up time speed.",
+        "> At last, there is a more difficult point to understand—— Number will not only increase physical scale, but also slightly speed up time speed.",
         "> It is said that, human with higher number will have everything faster.—— Not because their body become bigger, but the whole life being will have faster time—— But I can't experience it myself, and I can't say exactly what that means.",
         "> ...Why would I know this?... There was a passager passing by, talked to me for a while—— he was very interested in the place at that time, says our OoM is exactly 1, which is very rare.",
         "> After he left, I thought the theory about numbers made sense and told the villagers and children here.",
@@ -27,9 +27,9 @@ var full_dialogue = {
     ],
 
     "p13": [
-        "Uncle Idly sitting: Hey, where ya come from? Sea? You're SO lucky that you didn't get caught up in the waves and die. come here and let me share some of your luck, I need them next card game——",
+        "Uncle Idly sitting: Hey, where ya come from? Sea? You're SO lucky that you didn't get caught up in the waves and die. come here and share me some luck, I need them next card game——",
         "Clerk Serving wine: How does our mulled wine taste? This time we used new method and high number wheat, the owner is very interested in hearing everyone's comments——",
-        "Part Time Adventurer: You are an Adventurer? Ugh, how nice of you. We can't even have an proper mission in our little shitty place, not to mension looking up to what Snowolf the legendary mercenary. Here, please tell us your legend.—— Memory lost? BOO. Forget about that.",
+        "Part Time Adventurer: You are an Adventurer? Ugh, how nice of you. We can't even have an proper mission in our little shitty place, not to mension looking up to what legendary mercenary called Snowolf. Here, please tell us your legend.—— Memory lost? BOO. Forget about that.",
         "Tailor Resting: STOP THERE!! I'm trying making an story, and you broke my thought in the very good part. Why didn't I wrote that down? You Idiot——  Don't you know it will be eated by bugs?",
         "Child Cheek Resting: ...What is there outside the village? I only know a sea on one side and a plain on the other, but the village head said that even if we swim and walk for the rest of our lives, we will never see the outside world...",
         "Murmuring Drunkard: ......... The Supreme True Dragon ......... Aleph ...... bless ........................",

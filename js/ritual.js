@@ -232,34 +232,34 @@ addLayer("r", {
             body() { return "\tYour eyes closed in dark at the very moment of your death, and your conscious slowly fade out. Every sense leaves you away, as if you are on the border between reality and dream. \nYou soon realized that you are not died in reality." }
         },
         systemintro: {
-            title: "数字",
+            title: "Number",
             body() {
                 return `
-                    <p style='font-size:20px'>数字是世界的核心系统。</p>
+                    <p style='font-size:20px'>Number is the core system of the world.</p>
                     <br>
-                    数字直接影响你作为一个生物的物理尺寸，也即长宽高的倍率。<br>
-                    你的质量和数字的立方成正比，使战斗中的HP, ATK, DEF全部等比例提升。<br>
-                    你的一些行动消耗也会相应上升。<br>
-                    最后，你的时间速度受到数字的立方根加成。包括战斗时的行动速度。<br>
-                    不过别忘了，这一切对你的敌人同样适用。小心高数字的敌人！<br>
+                    The numbers directly affect your physical size as a creature, i.e. multiplies the length, width and height.<br>
+                    Your mass is proportional to the cube of the number, giving an boost to HP, ATK, DEF in combat.<br>
+                    Some of your actions will also have higher cost.<br>
+                    At last, your time speed are boosted by cube rooted number, including speed in combat.<br>
+                    But don't forget that all of this applies to your enemies as well. Watch out for enemies with high numbers!<br>
                     <br>
 
-                    <p style='font-size:20px'>装备中的数字</p>
+                    <p style='font-size:20px'>Number in equipments.</p>
                     <br>
-                    武器装备也拥有各自的数字，代表其各自的尺寸。<br>
-                    你在战斗中的攻防数字，可以看作你与装备两者数字的几何平均。<br>
+                    Equipments have their number as well, representing their size.<br>
+                    Your ATK and DEF numbers in combat can be thought of as a geometric average of your numbers and those of your equipment.<br>
                     <br>
-                    实际HP = 基础HP * 角色数字<sup>3</sup><br>
-                    实际ATK = 武器基础ATK * (武器数字 * 角色数字)<sup>1.5</sup><br>
-                    实际DEF = 盾牌DEF + 护甲DEF<br>
-                    盾牌DEF = 盾牌基础DEF * (盾牌数字 * 角色数字)<sup>1.5</sup><br>
-                    护甲DEF = 护甲基础DEF * (护甲数字 * 角色数字)<sup>1.5</sup><br>
+                    Real HP = Base HP * Character Number<sup>3</sup><br>
+                    Real ATK = Weapon Base ATK * (Weapon Number * Character Number)<sup>1.5</sup><br>
+                    Real DEF = Shield DEF + Armor DEF<br>
+                    Shield DEF = Shield Base DEF * (Shield Number * Character Number)<sup>1.5</sup><br>
+                    Armor DEF = Armor Base DEF * (Armor Number * Character Number)<sup>1.5</sup><br>
                     <br>
-                    戒指虽不提供战斗数值，但其特殊效果受到自身数字影响。<br>
+                    Although ring does not provide bonus in combat, but its special effects are influenced by its own numbers.<br>
                     <br>
-                    生产工具的数字，同样直接提升相关行动的产出。<br>
+                    The number on production tools also directly enhance the output of the relevant actions.<br>
                     <br>
-                    生产工具产出 = 基础产出 * 技能加成 * (工具数字 * 角色数字)<sup>1.5</sup><br>
+                    Production Output = Base Output * Skill Bonus * (Tools Number * Character Number)<sup>1.5</sup><br>
                 `
             }
         }
@@ -335,11 +335,11 @@ addLayer("r", {
 
         "Number": {
             content: [["display-text", function(){
-                let ret = `<p style='font-size: 20px; margin-bottom: 20px'>你目前的数字为 ${format(tmp.r.number)}</p>`
+                let ret = `<p style='font-size: 20px; margin-bottom: 20px'>Your current number is ${format(tmp.r.number)}</p>`
 
-                ret += `<p>你的物理尺寸提升 x${format(tmp.r.physicalEffect)}</p>`
-                ret += `<p>你的资源消耗提升 x${format(tmp.r.consumptionEffect)}</p>`
-                ret += `<p>你的时间速度提升 x${format(tmp.r.speedUp)}</p>`
+                ret += `<p>Your physical size is increased by x${format(tmp.r.physicalEffect)}</p>`
+                ret += `<p>Your consumption is increased by x${format(tmp.r.consumptionEffect)}</p>`
+                ret += `<p>Your time spped is increased by x${format(tmp.r.speedUp)}</p>`
 
                 return ret
             }],
@@ -350,9 +350,9 @@ addLayer("r", {
                 return ret
             }], ["display-text", function() {
                 if (!player.m.sigil0_unlocked) return
-                let ret = `角质构成的椭圆形符号，带有浅浅的麝香味。<br>
-                    根据所获战斗经验总量得到成长，提升下一次重生的数字。<br>
-                    目前效果: x${format(tmp.r.sigil0Effect)} 重生后: x${format(tmp.r.sigil0EffectNext)}`
+                let ret = `Oval symbol composed of horniness, with a light musky note.<br>
+                Grows with total combat experience gained, boosting your number on next reborn.<br>
+                    Currently: x${format(tmp.r.sigil0Effect)} Next reborn: x${format(tmp.r.sigil0EffectNext)}`
                 return ret
             }]]],
             "blank",
