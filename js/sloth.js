@@ -77,7 +77,7 @@ addLayer("s", {
             cost(x) { return d(2.5).pow(x).mul(80) },
             display() { 
                 let cur_amount = getBuyableAmount(this.layer, this.id)
-                return `Sloth x1.5 \n
+                return `Sloth gain x1.5 \n
                 Currently: ${format(this.effect(cur_amount))}x
                 Next cost: ${format(this.cost(cur_amount))}` 
             },
