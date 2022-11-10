@@ -24,8 +24,8 @@ let inventory_buyable_style = {
 }
 
 addLayer("i", {
-    name: "物品", // This is optional, only used in a few places, If absent it just uses the layer id.
-    disp_symbol: "物品",
+    name: "Item", // This is optional, only used in a few places, If absent it just uses the layer id.
+    disp_symbol: "ITM",
     symbol: "I", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 2, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { 
@@ -122,11 +122,11 @@ addLayer("i", {
     },
     tooltip:() => {
         if (player.i.cur_invs >= player.i.inv_slots) {
-            return "物品栏: 背包已满！"
+            return "Inventory: Bag is full!"
         }
-        return "物品栏"
+        return "Inventory"
     },
-    tooltipLocked:() => "物品栏",
+    tooltipLocked:() => "Inventory",
     prestigeNotify: () => false,
 
     canAddInventory() {
@@ -183,7 +183,7 @@ addLayer("i", {
 
         let equip = player.i.inventory[ind]
         let dispn = full_equips[equip.name].dispn
-        return ` ${dispn}, 数字${format(equip.number)}`
+        return ` ${dispn}, Number ${format(equip.number)}`
     },
 
     selectedForgeCosts() {
@@ -278,7 +278,7 @@ addLayer("i", {
         if (!inv.equipped) return ""
 
         let disp = full_equips[inv.name].dispn + "<br>"
-        disp += `数字: ${format(inv.number)}<br>`
+        disp += `Number: ${format(inv.number)}<br>`
 
         if (full_equips[inv.name].desc) {
             disp += full_equips[inv.name].desc(inv.number.cube().mul(tmp.r.physicalEffect.cube()).sqrt(), inv.number)
@@ -293,7 +293,7 @@ addLayer("i", {
 
     clickables: {
         11: {
-            title: "武器",
+            title: "Weapon",
             display: () => layers.i.equipDisplay("weapon"),
             style() {
                 return {
@@ -305,7 +305,7 @@ addLayer("i", {
             canClick: () => player.i.equips.weapon.equipped && tmp.i.canAddInventory
         },
         12: {
-            title: "盾牌",
+            title: "Shield",
             display: () => layers.i.equipDisplay("shield"),
             style() {
                 return {
@@ -317,7 +317,7 @@ addLayer("i", {
             canClick: () => player.i.equips.shield.equipped && tmp.i.canAddInventory
         },
         13: {
-            title: "护甲",
+            title: "Armor",
             display: () => layers.i.equipDisplay("armor"),
             style() {
                 return {
@@ -329,7 +329,7 @@ addLayer("i", {
             canClick: () => player.i.equips.armor.equipped && tmp.i.canAddInventory
         },
         14: {
-            title: "戒指",
+            title: "Ring",
             display: () => layers.i.equipDisplay("ring"),
             style() {
                 return {
@@ -341,7 +341,7 @@ addLayer("i", {
             canClick: () => player.i.equips.ring.equipped && tmp.i.canAddInventory
         },
         21: {
-            title: "渔具",
+            title: "Rods",
             display: () => layers.i.equipDisplay("fishingrod"),
             style() {
                 return {
@@ -353,7 +353,7 @@ addLayer("i", {
             canClick: () => player.i.equips.fishingrod.equipped && tmp.i.canAddInventory
         },
         22: {
-            title: "伐木",
+            title: "Axe",
             display: () => layers.i.equipDisplay("axe"),
             style() {
                 return {
@@ -365,7 +365,7 @@ addLayer("i", {
             canClick: () => player.i.equips.axe.equipped && tmp.i.canAddInventory
         },
         23: {
-            title: "挖矿",
+            title: "Pickaxe",
             display: () => layers.i.equipDisplay("pickaxe"),
             style() {
                 return {
@@ -378,24 +378,24 @@ addLayer("i", {
         },
 
         31: {
-            title: "丢弃",
+            title: "Discard",
             display() {
                 if (player.i.cur_invs * 2 <= player.i.inv_slots) {
-                    return `背包还很空，无需这个功能`
+                    return `Inventory is pretty empty rn.`
                 }
                 if (player.i.discard_selected) {
                     if (player.i.selected_inv_ind >= 0) {
                         let selected_inv_desc = tmp.i.selectedInvDisplay
-                        return `已选择的装备: ${selected_inv_desc}
-                            再次点击此按钮丢弃，
-                            操作不可逆转，请慎重！`
+                        return `Selected: ${selected_inv_desc}
+                            Click me again to discard this equipment.
+                            This is irreversible, please be careful!`
                     } else {
-                        return `选择背包中一件装备，
-                            或点此取消`
+                        return `Select an equipment in inventory,
+                            or click here to cancel.`
                     }
                 } else {
-                    return `选择背包中一件装备丢弃
-                        操作不可逆转，请慎重！`
+                    return `Select an equipment in inventory to discard.
+                    This is irreversible, please be careful!`
                 }
             },
             style() {
@@ -424,27 +424,27 @@ addLayer("i", {
 
         
         32: {
-            title: "回炉",
+            title: "Baking",
             display() {
                 if (!player.i.forge_unlocked) {
-                    return `待解锁`
+                    return `Locked.`
                 }
                 if (player.i.forge_selected) {
                     if (player.i.selected_inv_ind >= 0) {
                         let selected_inv_desc = tmp.i.selectedInvDisplay
                         let cost_display = tmp.i.forgeCostDisplay
                         let number_forged = tmp.i.forgeExpectation
-                        return `再次点击此按钮回炉
-                            目前选择装备: ${selected_inv_desc}
-                            回炉消耗: ${cost_display}
-                            回炉后数字: ${number_forged}`
+                        return `Click me again to baking.
+                            Selected: ${selected_inv_desc}
+                            Baking Cost: ${cost_display}
+                            Number After: ${number_forged}`
                     } else {
-                        return `请选择装备，
-                            或点此取消`
+                        return `Select an equipment,
+                        or click here to cancel`
                     }
                 } else {
-                    return `选择背包中一件装备回炉强化，
-                        提升装备数字`
+                    return `Select an equipment in inventory to baking,
+                        Raise equipments number`
                 }
             },
             style() {
@@ -518,12 +518,12 @@ addLayer("i", {
             }
         },
         getTitle(data, id) {
-            return player.i.inventory[data].exist ? full_equips[player.i.inventory[data].name].dispn : "空"
+            return player.i.inventory[data].exist ? full_equips[player.i.inventory[data].name].dispn : "Empty"
         },
         getDisplay(data, id) {
             if (player.i.inventory[data].exist) {
                 let inv = player.i.inventory[data]
-                return `数字<br>${format(inv.number)}`
+                return `Number <br>${format(inv.number)}`
             } else {
                 return ""
             }
@@ -532,7 +532,7 @@ addLayer("i", {
 
     buyables: {
         11: {
-            title: "背包扩容 I",
+            title: "Larger Backpack I",
             unlocked: () => player.mk.mphorde_reward_unlocked,
 
             display() { return "TODO"},
@@ -546,13 +546,13 @@ addLayer("i", {
     },
 
     tabFormat: {
-        "背包": {
+        "Backpack": {
             content: [
             ["display-text",
             function() {
                 let d = player.i
                 let disp = ""
-                disp += "<p>你目前拥有</p><p>——————————————————————————</p>"
+                disp += "<p>You have:</p><p>——————————————————————————</p>"
                 
                 for (let res_n in res_list) {
                     res_n = res_list[res_n]
@@ -566,7 +566,7 @@ addLayer("i", {
             "blank",
             "h-line",
             "blank",
-            ["display-text", "装备栏"],
+            ["display-text", "Equipments"],
             "blank",
             ["clickables", [1]],
             "blank",
@@ -581,13 +581,13 @@ addLayer("i", {
             "buyables",
             "blank"]
         },
-        "制造": {
+        "Craft": {
             content: [    
                 ["display-text",
                 function() {
                     let d = player.i
                     let disp = ""
-                    disp += "<p>你目前拥有</p><p>——————————————————————————</p>"
+                    disp += "<p>You have:</p><p>——————————————————————————</p>"
                     
                     for (let res_n in res_list) {
                         res_n = res_list[res_n]
@@ -602,9 +602,9 @@ addLayer("i", {
                 "blank",
 
                 ["display-text", function() {
-                    return `<p>你可以在此处消耗资源，制造数字为1的装备。</p>
-                    <p>拥有多个同样的装备并没有什么好处。</p>
-                    <p>戒指往往提供战斗外的加成，推荐首先制造。</p>`
+                    return `<p>You create equipment here with a number of 1.</p>
+                    <p>Having lots of same equipments won't benifit you.</p>
+                    <p>Rings often provide bonuses outside of combat and are recommended to be made first.</p>`
                 }, {"font-size": "16px"}],
 
                 "blank",
