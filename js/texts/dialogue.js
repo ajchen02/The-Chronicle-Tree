@@ -1,36 +1,36 @@
 var full_dialogue = {
     "p11": [
-        "> Are you a traveler? As the head of Peano village, I should have come to greet you in person, but... Unfortunately, I'm still teaching the childs and I can't just walk away. Where did you plan to go on this trip?",
+        "> Are you a traveler? As the head of Peano village, I should have come to greet you in person, but... Unfortunately, I'm still teaching the children and I can't just walk away. Where did you plan to go on this trip?",
         "> Memory loss? This... is too bad... You came from the sea? This is really rare... You must had some miraculous experience.",
         "> Anyway, if you want to stay in the village for a while longer, I can say hello to everyone to make you more comfortable.",
-        "> However, you'd better not go out of the village without attention... Without memory, it is very dangerous to go to the along outside the village. Although none of the OoM around here is too high, but if you encounter a beast with a number over 10...",
-        "> Huh, you have even forgotten the concept of Orders of Magnitude?... To this point... I think you must neet to learn it. After all, this is the basic common sense to living in this world...",
+        "> However, you'd better not go out of the village without attention... Without memory, it is very dangerous to go along to the outside the village. Although none of the OoM around here is too high, but if you encounter a beast with a number over 10...",
+        "> Huh, you have even forgotten the concept of <b>Orders of Magnitude</b>?... To this point... I think you must need to learn it. After all, this is the basic common sense to living in this world...",
         "> I have been teaching basic mathematics to everyone in the village - starting from Peano's axioms to the theory of real numbers - and I am still confident in my teaching skills.",
         "> I'll try to be simple and clear, so if you're not in a hurry to do anything else, let's get started now: Numerology 101——"
     ],
 
     "p12": [
         "> It is said that, when the Creator created everything, He gave an intrinsic property to each object, which is <b>Number</b>.",
-        "> The most direct manifestation of the numbers is the physical scale. For example, on the same type of tree, the tree with number of 10 will have 10 time of the length, width and height of the tree with number 1. Isn't it direct?",
-        "> For instance, mine number is an exact 1, and everything in our village is in the range of 0.9 ~ 1.1 . The phenomenon of things within a region having similar numbers is generally known as <b>Orders of Magnitude Effect</b> (OoM Effect).",
+        "> The most direct manifestation of the numbers is the physical scale. For example, on the same type of tree, the tree with number of 10 will have 10 time the length, width and height of the tree with number 1. Isn't it direct?",
+        "> For instance, my number is exactly 1, and everything in our village is in the range of 0.9 ~ 1.1 . The phenomenon of things within a region having similar numbers is generally known as <b>Orders of Magnitude Effect</b> (OoM Effect).",
         "> Speaking of outside, it's far more dangerous than just plain land. It contains not only beast with number near us, but if you get lost in the depths, you may encounter creature with number 10, 100, or even higher.",
         "> To that scale of differences, even if you were just be accidentally stepped on, you will be killed on the spot, without any chance to escape.",
         "> And the sea that you wake up to, it is said that the deeper you go, the higher the OoM, and the center even reaches as high as 1e100—— This is far more beyond our.",
         "> Human also exist on the higher OoM, but fortunately they don't mind our little village and we can still live a relatively peaceful life.",
         "> The reason is simple: as the number rises, the resources needed to survive also rise cubically. A wolf with number 5 will have a 125 times weight, and need to eat 125 times food.",
-        "> Other than food, gold is also applied to this rule. If you take 1 golden coin of our village to an town of 10 OoM, it will only have 0.0001 times purchasing power. So plundering villages like ours won't do any goods.",
-        "> At last, there are an more difficult points to understand—— Number will not only increase physical scale, but also strightly speed up time speed.",
+        "> Other than food, gold is also applied to this rule. If you take 1 golden coin of our village to an town of 10 OoM, it will only have 0.001 times purchasing power. So plundering villages like ours won't do any goods.",
+        "> At last, there are an more difficult points to understand—— Number will not only increase physical scale, but also slightly speed up time speed.",
         "> It is said that, human with higher number will have everything faster.—— Not because their body become bigger, but the whole life being will have faster time—— But I can't experience it myself, and I can't say exactly what that means.",
-        "> ...Why I know this?... There was a passager passing by, talked to me for a while—— he was very interested in the place at that time, says our OoM is precised to 1, which is very rare.",
+        "> ...Why would I know this?... There was a passager passing by, talked to me for a while—— he was very interested in the place at that time, says our OoM is exactly 1, which is very rare.",
         "> After he left, I thought the theory about numbers made sense and told the villagers and children here.",
-        "> The only thing I don't understand, though, is who defind <b>The standard of 1</b>. Why definded our OoM as 1, rather than 10 or 0.1 ....But I guess it's not a big deal for everyone in the village."
+        "> The only thing I don't understand, though, is who defined <b>The standard of 1</b>. Why defined our OoM as 1, rather than 10 or 0.1 ....But I guess it's not a big deal for everyone in the village."
     ],
 
     "p13": [
         "Uncle Idly sitting: Hey, where ya come from? Sea? You're SO lucky that you didn't get caught up in the waves and die. come here and let me share some of your luck, I need them next card game——",
         "Clerk Serving wine: How does our mulled wine taste? This time we used new method and high number wheat, the owner is very interested in hearing everyone's comments——",
         "Part Time Adventurer: You are an Adventurer? Ugh, how nice of you. We can't even have an proper mission in our little shitty place, not to mension looking up to what Snowolf the legendary mercenary. Here, please tell us your legend.—— Memory lost? BOO. Forget about that.",
-        "Tailor Resting: STOP THERE!! I'm trying making an story, and you broke my thought in the very good part. Why didn't I wrote that down? You Idiot——  Don't you know it will be eated by the bugs?",
+        "Tailor Resting: STOP THERE!! I'm trying making an story, and you broke my thought in the very good part. Why didn't I wrote that down? You Idiot——  Don't you know it will be eated by bugs?",
         "Child Cheek Resting: ...What is there outside the village? I only know a sea on one side and a plain on the other, but the village head said that even if we swim and walk for the rest of our lives, we will never see the outside world...",
         "Murmuring Drunkard: ......... The Supreme True Dragon ......... Aleph ...... bless ........................",
         "Not Drunked Blacksmith: New faces. It's been a while since I've seem one. Last outsider spent a large sum of money to buy away my sharpening stone. What does he want after all?",
@@ -44,7 +44,7 @@ var full_dialogue = {
         "The homeless man takes your food, and crossing legs.",
         "The homeless man takes your food, and picked nose.",
         "The homeless man takes your food, and continue sunbathing.",
-        "The homeless man takes your food, and hummed song",
+        "The homeless man takes your food, and hummed song.",
         "The homeless man takes your food, and whistled."
     ],
 
