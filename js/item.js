@@ -4,9 +4,9 @@ var res_name = {
     "gold": "Gold",
     "food": "Food",
     "fish": "Fish",
-    "wood": "木材",
-    "fiber": "纤维",
-    "mineral": "矿物",
+    "wood": "Wood",
+    "fiber": "Fiber",
+    "mineral": "Mineral",
     "fur": "Fur",
 }
 
@@ -581,7 +581,7 @@ addLayer("i", {
             "buyables",
             "blank"]
         },
-        "Craft": {
+        "Forge": {
             content: [    
                 ["display-text",
                 function() {
@@ -602,7 +602,7 @@ addLayer("i", {
                 "blank",
 
                 ["display-text", function() {
-                    return `<p>You create equipment here with a number of 1.</p>
+                    return `<p>You can create equipment here with a number of 1.</p>
                     <p>Having lots of same equipments won't benifit you.</p>
                     <p>Rings often provide bonuses outside of combat and are recommended to be made first.</p>`
                 }, {"font-size": "16px"}],
