@@ -16,10 +16,10 @@ var skill_dispn = {
     "trading": "Trading",
     "fishing": "Fishing",
     "hunting": "Hunting",
-    "atk": "攻击",
-    "def": "防御",
-    "speed": "速度",
-    "hp": "耐力",
+    "atk": "Attack",
+    "def": "Defense",
+    "speed": "Speed",
+    "hp": "Endurance",
 }
 
 addLayer("e", {
@@ -225,7 +225,7 @@ addLayer("e", {
     tabFormat: {
         "Survival": {
             content: [
-                ["display-text", "</b>Your body will become grow stronger as you proceed,<br>but if you died, all content in this page will reset!</b>", {"font-size": "20px"}],
+                ["display-text", "</b>Your body will become stronger as you proceed,<br>but if you died, all content in this page will reset!</b>", {"font-size": "20px"}],
                 "blank",
                 ["display-text", function() {
                     return `Your total survival skill level is ${format(player.e.lvlpoints, 0)},<br> Increase skill exp gain by x${format(tmp.e.lvlpEffect)}`
@@ -269,11 +269,11 @@ addLayer("e", {
 
         "Combat": {
             content: [
-                ["display-text", "</b>Your body will become grow stronger as you proceed,<br>but if you died, all content in this page will reset!</b>", {"font-size": "20px"}],
+                ["display-text", "</b>Your body will become stronger as you proceed,<br>but if you died, all content in this page will reset!</b>", {"font-size": "20px"}],
                 "blank",
                 
                 ["display-text", function() {
-                    return `<p>Combat skill experience aren't boosted by survival skill,<br> and will automaticly spilt between four combat skill.</p><br><p>You can also choose to master one of the combat skill to give it all the experience!</p>`
+                    return `<p>Combat skill experience aren't boosted by survival skill,<br> and will automaticly spilt between four combat skills.</p><br><p>You can also choose to master one of the combat skill to give it all the experience!</p>`
                 }, {"font-size": "16px"}],
                 "blank",
                 ["display-text", function() {
@@ -533,7 +533,7 @@ addLayer("e", {
                 layers["r"].addRawScore(affordLvls.div(lvlDivider))
 
                 if (affordLvls.gt(0) && battle_skills.has(skill)) {
-                    layers.b.pushBattleLog(`${skill_dispn[skill]} 技能提升到了 ${format(data.lvl)} 级！`)
+                    layers.b.pushBattleLog(`${skill_dispn[skill]} Level Up to Lv${format(data.lvl)} !`)
                 }
             }
         }

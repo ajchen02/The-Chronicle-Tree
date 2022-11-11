@@ -1,5 +1,5 @@
 addLayer("f", {
-    name: "亘古王都", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "Eternity Everfort", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "F", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
@@ -30,10 +30,10 @@ addLayer("f", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return d(1)
     },
-    tooltip: () => `投入时间 <br>
+    tooltip: () => `Spent <br>
     &nbsp; ${formatWhole(player.f.points)}`,
-    tooltipLocked: () => `??? <br>
-            到达 ??? 解锁`,
+    tooltipLocked: () => `
+            Reach ??? to unlock`,
     
     row: 0, // Row the layer is in on the tree (0 is the first row)
     displayRow: 4,

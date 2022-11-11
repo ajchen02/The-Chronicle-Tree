@@ -213,7 +213,7 @@
 .sideMenuLabel {
 	transition-duration: 0s;
 	font: inherit;
-	font-family: inherit;
+	font-family: 'Times New Roman', Georgia, serif;
 }
 
 .sideMenu:hover {

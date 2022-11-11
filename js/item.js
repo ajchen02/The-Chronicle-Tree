@@ -603,7 +603,7 @@ addLayer("i", {
 
                 ["display-text", function() {
                     return `<p>You can create equipment here with a number of 1.</p>
-                    <p>Having lots of same equipments won't benifit you.</p>
+                    <p>Having duplicated equipments is not helpful.</p>
                     <p>Rings often provide bonuses outside of combat and are recommended to be made first.</p>`
                 }, {"font-size": "16px"}],
 

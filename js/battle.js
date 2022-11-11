@@ -228,9 +228,9 @@ addLayer("b", {
 
     clickables: {
         11: {
-            "title": "逃跑！",
+            "title": "Run!!",
             display() {
-                return `脱离战斗或副本，不会获得任何战利品，但也没有损失`
+                return `Escape from battle or zone. You keep no loots but also lose nothing.`
             },
             style() {
                 return {
@@ -244,7 +244,7 @@ addLayer("b", {
                 player.b.in_battle = false
                 player.b.in_zone = false
                 player.b.zone_countdown = 0
-                layers["b"].pushBattleLog(`你逃跑了！`)
+                layers["b"].pushBattleLog(`You escaped!`)
             },
 
             canClick: () => !player.r.is_dead && player.b.in_battle
@@ -254,15 +254,15 @@ addLayer("b", {
     tabFormat: [
         ["display-text", function() {
             if (player.b.in_zone) {
-                return `你正在副本 ${zones[player.b.zone_name].dispn} 中，剩余 ${player.b.zone_countdown}/${player.b.zone_total} 场战斗`
+                return `You are in zone ${zones[player.b.zone_name].dispn}, Rest encounters ${player.b.zone_countdown}/${player.b.zone_total}`
             }
         }],
         "blank",
         ["display-text", function() {
             if (player.b.in_battle) {
-                return `你正在和 ${player.b.enemy.dispn} 战斗！`
+                return `You are fighting with ${player.b.enemy.dispn} !`
             } else {
-                return `目前没有发生战斗。`
+                return `No ongoing combat rn.`
             }
         }],
         "blank",
@@ -272,8 +272,8 @@ addLayer("b", {
         ["display-text", function() {
             if (!player.b.in_battle) return ""
             let ene = player.b.enemy
-            return `<p><b style='font-size: 20px'>${ene.dispn}</b> 数字 ${format(ene.number)}</p>
-            ATK ${format(ene.atk)}, DEF ${format(ene.def)}, 速度 ${format(ene.speed)}`
+            return `<p><b style='font-size: 20px'>${ene.dispn}</b> Number ${format(ene.number)}</p>
+            ATK ${format(ene.atk)}, DEF ${format(ene.def)}, SPD ${format(ene.speed)}`
         }],
         ["bar", "enemyHPBar"],
         ["bar", "enemyMPBar"],
@@ -293,8 +293,8 @@ addLayer("b", {
         ["display-text", function() {
             if (!player.b.in_battle) return ""
             let pl = player.b.pl
-            return `<p><b style='font-size: 20px'>你</b> 数字 ${format(tmp.r.number)}</p>
-            ATK ${format(pl.atk)}, DEF ${format(pl.def)}, 速度 ${format(pl.speed)}`
+            return `<p><b style='font-size: 20px'>You</b> Number ${format(tmp.r.number)}</p>
+            ATK ${format(pl.atk)}, DEF ${format(pl.def)}, SPD ${format(pl.speed)}`
         }],
         ["bar", "plHPBar"],
         ["bar", "plMPBar"],
@@ -436,7 +436,7 @@ addLayer("b", {
             dmg = dmg.max(0)
     
             atked.hp = atked.hp.sub(dmg)
-            layers["b"].pushBattleLog(`${is_crit? "<span style='color:red'>暴击！</span> " : ""}${atker.dispn} 对 ${atked.dispn} 造成了 ${format(dmg)}点伤害！`)
+            layers["b"].pushBattleLog(`${is_crit? "<span style='color:red'>Crit Hit!</span> " : ""}${atker.dispn} dealed ${format(dmg)} dmg to ${atked.dispn} !`)
 
             if ("induce_bleeding" in atker.traits) {
                 let bleeding = {moves:3, dmgrate: 0.05}
@@ -458,7 +458,7 @@ addLayer("b", {
 
             if ("bleeding" in atker.buffs) {
                 let bleeding_dmg = atker.maxhp.mul(atker.buffs["bleeding"].dmgrate)
-                layers["b"].pushBattleLog(`${atker.dispn} 流血受到 ${format(bleeding_dmg)}点伤害！`)
+                layers["b"].pushBattleLog(`${atker.dispn} wounded from bleeding for ${format(bleeding_dmg)} dmg!`)
                 atker.hp = atker.hp.sub(bleeding_dmg)
                 layers.b.subBuffMoves(attacker, "bleeding")
                 if (atker.hp.lte(0)) return
@@ -629,7 +629,7 @@ addLayer("b", {
                     layers.b.subBuffMoves("enemy", "boss")
                 } else {
                     // you win
-                    layers["b"].pushBattleLog(`${enemy.dispn} 倒下了！`)
+                    layers["b"].pushBattleLog(`${enemy.dispn} is defeated!`)
 
                     // roll drop items
                     let drop = full_enemies[enemy.name].drop
@@ -639,7 +639,7 @@ addLayer("b", {
                         exp = exp.mul(upgradeEffect("mp", 12))
                     }
                     let drop_exp = layers["e"].addBattleExp(exp.mul(enemy.number.pow(2.5)))
-                    layers["b"].pushBattleLog(`获得了 ${format(drop_exp)} 经验！`)
+                    layers["b"].pushBattleLog(`You gained ${format(drop_exp)} Experience!`)
 
 
                     for (let loot in drop.loots) {
@@ -652,7 +652,7 @@ addLayer("b", {
                                 let loot_num = loot.base.mul(enemy.number.pow(2.5))
                                 
                                 loot_num = loot_num.mul(layers.i.possibleEffect("ring", "goldenring", d(1)))
-                                layers["b"].pushBattleLog(`获得了 ${format(loot_num)} ${res_name[loot.res]}！`)
+                                layers["b"].pushBattleLog(`Enemy dropped ${format(loot_num)} ${res_name[loot.res]} as loot!`)
                                 player.i[loot.res] = player.i[loot.res].add(loot_num)
                             }
                         }
@@ -693,10 +693,10 @@ addLayer("b", {
                 b.in_zone = false
                 b.zone_countdown = 0
                 b.queued_encounters = []
-                layers["b"].pushBattleLog(`你死了。`)
+                layers["b"].pushBattleLog(`You died.`)
 
                 showTab("b")
-                layers["r"].youDied(`你在战斗中身亡。凶手是${enemy.dispn}`)
+                layers["r"].youDied(`You died in a combat. ${enemy.dispn} killed you.`)
                 return
             }
 

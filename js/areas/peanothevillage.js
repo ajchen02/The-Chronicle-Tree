@@ -94,13 +94,13 @@ addLayer("p", {
         },
         22: {
             title: "Visiting the tavern",
-            description: "Taverns are usually a good place to gather information.",
+            description: "Tavern is always a good place to gather information.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(30),
         },
         23: {
             title: "Visiting the fish shop",
-            description: "The sea will always be an important resource for villagers living by the sea.",
+            description: "The sea is always an important resource for villagers living by.",
             unlocked: () => hasUpgrade("p", 11),
             cost: d(40),
         },
@@ -125,7 +125,7 @@ addLayer("p", {
 
         31: {
             title: "Buy a fishing rod",
-            description: "To make fishing possible. <i>Fishing is a FEATURE of RPGs, can't go without a taste</i>",
+            description: "To make fishing possible. <i>Fishing is a must-have FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 23),
             cost: () => d(8).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -144,7 +144,7 @@ addLayer("p", {
 
         32: {
             title: "Buy an iron axe",
-            description: "To make chopping trees possible. <i>Chopping tree is a FEATURE of RPGs, can't go without a taste</i>",
+            description: "To make chopping trees possible. <i>Chopping tree is a must-have FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 25),
             cost: () => d(20).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -162,7 +162,7 @@ addLayer("p", {
 
         33: {
             title: "Buy an iron pickaxe",
-            description: "To make mining possible. <i>Mining is a FEATURE of RPGs, can't go without a taste</i>",
+            description: "To make mining possible. <i>Mining is a must-have FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 25),
             cost: () => d(50).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -180,7 +180,7 @@ addLayer("p", {
 
         34: {
             title: "Buy an iron sword",
-            description: "To make fighting possible. <i>Fighting is a FEATURE of RPGs, can't go without a taste</i>",
+            description: "To make fighting possible. <i>Fighting is a must-have FEATURE of RPGs, can't go without a taste</i>",
             unlocked: () => hasUpgrade("p", 25),
             cost: () => d(100).div(tmp.e.tradingEffect),
             currencyDisplayName: () => res_name["gold"],
@@ -210,7 +210,7 @@ addLayer("p", {
         41: {
             title: "Blacksmith's lesson I",
             description: () => `Use ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} And ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} As a gift,
-                Permanent unlock feature: Item - Forge, which allows you to use materials to create new equipment.`,
+                Permanently unlock feature: Item - Forge, which allows you to use materials to create new equipment.`,
             unlocked: () => hasUpgrade("p", 35),
             cost: () => d(300).div(tmp.e.communicationEffect),
             canAfford: () => player.i.fur.gte(d(40).div(tmp.e.tradingEffect)) && player.i.gold.gte(d(200).div(tmp.e.tradingEffect)),
@@ -224,7 +224,7 @@ addLayer("p", {
         42: {
             title: "Blacksmith's lesson II",
             description: () => `Use ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} And ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} As a gift,
-                Permanent unlock feature: Item - Baking, which allows you to use materials to raise equipment's number.`,
+                Permanently unlock feature: Item - Baking, which allows you to use materials to raise equipments' number.`,
             unlocked: () => hasUpgrade("p", 35),
             cost: () => d(300).div(tmp.e.communicationEffect),
             canAfford: () => player.i.fur.gte(d(40).div(tmp.e.tradingEffect)) && player.i.gold.gte(d(200).div(tmp.e.tradingEffect)),
@@ -422,7 +422,7 @@ addLayer("p", {
         13: {
             "title": "Sell fish",
             display() {
-                let disp = `Sell 50% of current ${res_name["fish"]} to earn paid, and improve your trading.\n
+                let disp = `Sell 50% of current ${res_name["fish"]} for gold, and improve your trading.\n
                 Trade ${format(player.i.fish.mul(0.5))} ${res_name["fish"]} with:
                 ${format(player.i.fish.mul(0.5).mul(tmp.p.sellFishIncome))} ${res_name["gold"]}
                 ${format(player.i.fish.mul(0.5).mul(tmp.p.sellFishExp))} Experience`

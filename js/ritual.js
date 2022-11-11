@@ -240,7 +240,7 @@ addLayer("r", {
                     The numbers directly affect your physical size as a creature, i.e. multiplies the length, width and height.<br>
                     Your mass is proportional to the cube of the number, giving an boost to HP, ATK, DEF in combat.<br>
                     Some of your actions will also have higher cost.<br>
-                    At last, your time speed are boosted by cube rooted number, including speed in combat.<br>
+                    At last, your time speed is boosted by cube rooted number, including SPD in combat.<br>
                     But don't forget that all of this applies to your enemies as well. Watch out for enemies with high numbers!<br>
                     <br>
 
@@ -255,9 +255,9 @@ addLayer("r", {
                     Shield DEF = Shield Base DEF * (Shield Number * Character Number)<sup>1.5</sup><br>
                     Armor DEF = Armor Base DEF * (Armor Number * Character Number)<sup>1.5</sup><br>
                     <br>
-                    Although ring does not provide bonus in combat, but its special effects are influenced by its own numbers.<br>
+                    Although rings do not provide stat bonus in combat, but their special effects are influenced by their own numbers.<br>
                     <br>
-                    The number on production tools also directly enhance the output of the relevant actions.<br>
+                    The number of production tools also directly enhance the output of the relevant actions.<br>
                     <br>
                     Production Output = Base Output * Skill Bonus * (Tools Number * Character Number)<sup>1.5</sup><br>
                 `

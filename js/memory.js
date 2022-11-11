@@ -121,7 +121,7 @@ addLayer("m", {
             done: () => tmp.p.layerFinished,
             tooltip() {
                 if (hasAchievement("m", this.id)) {
-                    return "You've learned everything about the village of Piano - and if you return here afterwards, everything will be more efficient for you. Peano village spent time x2"
+                    return "You've learned everything about the Peano village - and if you return here afterwards, everything will be more efficient. Peano village spent time x2"
                 } else {
                     return "Experience everything about Peano village to unlock this."
                 }
