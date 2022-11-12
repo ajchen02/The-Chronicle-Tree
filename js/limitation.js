@@ -2,7 +2,7 @@
 
 addLayer("l", {
     name: "限制",
-    disp_symbol: "限制",
+    disp_symbol: "ＬＭＴ",
     symbol: "L",
     position: 6,
     startData() { return {
