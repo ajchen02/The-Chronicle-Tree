@@ -189,7 +189,7 @@
 	transition-duration: 0s;
 	height: 50px;
 	width: 80px;
-	font-size: 30px;
+	font-size: 34px;
 	font-family: "Lucida Console", "Courier New", monospace;
 	text-shadow: var(--hqProperty3);
 	padding: 0;
@@ -211,9 +211,31 @@
 }
 
 .sideMenuLabel {
+	letter-spacing: -11px;
 	transition-duration: 0s;
 	font: inherit;
 	font-family: 'Times New Roman', Georgia, serif;
+}
+
+.sideLabel1 {
+    top: 5px;
+    position: relative;
+    left: -5px;
+	font-size: 34px;
+}
+
+.sideLabel2 {
+    top: 8px;
+    position: relative;
+    left: -24px;
+	font-size: 30px;
+}
+
+.sideLabel3 {
+    top: -35px;
+    position: relative;
+    left: 21px;
+	font-size: 34px;
 }
 
 .sideMenu:hover {
@@ -226,7 +248,7 @@
     content: "";
     position: relative;
     left: -10px;
-    top: -10px;
+    top: -50px;
     height: 20px;
     width: 80px;
     border-radius: 0px;
@@ -244,5 +266,5 @@
 }
 
 .menuNotify {
-	filter: drop-shadow(3px 3px 10px red) ;
+	text-shadow: 3px 3px 5px red;
 }

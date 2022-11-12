@@ -246,7 +246,9 @@ var systemComponents = {
 				menuCan: ((player[layer].unlocked || tmp[layer].canReset) && tmp[layer].isLayer) || (!tmp[layer].isLayer && tmp[layer].canClick),
 				front: !tmp.scrolled,
 			}"	>
-			<span class="sideMenuLabel" v-html="(abb !== '' && tmp[layer].image === undefined) ? abb : '&nbsp;'"></span>
+			<span class="sideMenuLabel sideLabel1" v-html="(abb !== '' && tmp[layer].image === undefined) ? abb[0] : '&nbsp;'"></span>
+			<span class="sideMenuLabel sideLabel2" v-html="(abb !== '' && tmp[layer].image === undefined) ? abb[1] : '&nbsp;'"></span>
+			<span class="sideMenuLabel sideLabel3" v-html="(abb !== '' && tmp[layer].image === undefined) ? abb[2] : '&nbsp;'"></span>
 			
 		</button>
 		`

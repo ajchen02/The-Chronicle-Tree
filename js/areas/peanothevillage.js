@@ -210,7 +210,7 @@ addLayer("p", {
         41: {
             title: "Blacksmith's lesson I",
             description: () => `Use ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} And ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} As a gift,
-                Permanently unlock feature: Item - Forge, which allows you to use materials to create new equipment.`,
+                Permanently unlock feature: Resource - Forge, which allows you to use materials to create new equipment.`,
             unlocked: () => hasUpgrade("p", 35),
             cost: () => d(300).div(tmp.e.communicationEffect),
             canAfford: () => player.i.fur.gte(d(40).div(tmp.e.tradingEffect)) && player.i.gold.gte(d(200).div(tmp.e.tradingEffect)),
@@ -224,7 +224,7 @@ addLayer("p", {
         42: {
             title: "Blacksmith's lesson II",
             description: () => `Use ${format(d(40).div(tmp.e.tradingEffect))} ${res_name["fur"]} And ${format(d(200).div(tmp.e.tradingEffect))} ${res_name["gold"]} As a gift,
-                Permanently unlock feature: Item - Baking, which allows you to use materials to raise equipments' number.`,
+                Permanently unlock feature: Resource - Baking, which allows you to use materials to raise equipments' number.`,
             unlocked: () => hasUpgrade("p", 35),
             cost: () => d(300).div(tmp.e.communicationEffect),
             canAfford: () => player.i.fur.gte(d(40).div(tmp.e.tradingEffect)) && player.i.gold.gte(d(200).div(tmp.e.tradingEffect)),
