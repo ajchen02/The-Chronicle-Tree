@@ -301,7 +301,7 @@
     left: -8px;
     top: -22px;
     height: 10px;
-    width: 40px;
+    width: 60px;
     border-radius: 0px;
     border: 26px solid transparent;
     border-top-color: var(--item-color);
@@ -315,7 +315,7 @@
 
 .itemNum {
 	position: absolute;
-	left: 80px;
+	left: 100px;
 	top: 0px;
 	margin: 0;
 	width: 200px;
