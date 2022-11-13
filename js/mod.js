@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "编年史树",
+	name: "The Chronicle Tree",
 	id: "chronicle",
 	author: "catfish",
-	pointsName: "Free times",
+	pointsName: "Free time",
 	modFiles: [
 		"utils/funcutils.js",
 		"tree.js", 
