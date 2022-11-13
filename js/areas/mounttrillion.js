@@ -1,6 +1,6 @@
 
 addLayer("t", {
-    name: "千兆雪山",
+    name: "Mount Trillion",
     symbol: "T",
     position: 1,
 
@@ -37,7 +37,7 @@ addLayer("t", {
         return d(1)
     },
     
-    tooltip: () => `投入时间 <br>
+    tooltip: () => `Spent <br>
         &nbsp; ${formatWhole(player.t.points)}`,
     tooltipLocked: () => "千兆雪山",
 

@@ -40,21 +40,23 @@ let VERSION = {
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h2>FOR GOD SAKE I WILL NOT TRANSLATE THIS<h2><br>
-	<h3>v0.02+ 新手村的终点 </h3><br>
-		- 加入更多机制，一些素材和一个副本，结束了第二个大地区层。
+	<h2><del>FOR GOD SAKE I WILL NOT TRANSLATE THIS</del></h2><br>
+	<br><br>
 
-	<h3>v0.02 第一点五步</h3><br>
-		- 增加了小半个地区层，修改了明显不合理的部分数值。<br>
-		- 现在初期可能反而过于缓慢。<br>
-
-	<h3>v0.01+ 第一步</h3><br>
-		- 增加了半个地区层，重写大部分机制，完成了数字系统前的导入。<br>
-		- 节奏可能存在一点问题。<br>
+	<h3>v0.02+ End of Novice Area </h3><br>
+		- More mechanics, materials and a battle zone, the end of 2nd area layer.<br>
 		<br>
-	<h3>v0.01 旅途的起始</h3><br>
-		- 增加了5个功能层+2个地区层，实现了最初区域的导入和基本玩法.<br>
-		- 不存在平衡。<br>
+	<h3>v0.02 Step 1.5</h3><br>
+		- Added half of area layer, rebalanced game.<br>
+		- Might be a bit slow at start.<br>
+		<br>
+	<h3>v0.01+ Step 1</h3><br>
+		- Added half of area layer, rewrite most mechanics, the introduction to Number<br>
+		- Might be somehow imbalanced.<br>
+		<br>
+	<h3>v0.01 Start of the Journey</h3><br>
+		- Added 5 system layers + 2 area layers, implemented the first zone and the basic intro<br>
+		- Non-balanced.<br>
 		`
 
 let intro = `<h1>Intro:</h1><br>
